@@ -16,7 +16,8 @@ var ClosetSchema = new mongoose.Schema({
   isClean: Boolean,
   lastWorn: Date,
   color: String,
-  material: String
+  material: String,
+  outfits: [ {type: Schema.ObjectId, ref: "Outfit"} ]
 });
 
 module.exports = mongoose.model('Closet', ClosetSchema);
