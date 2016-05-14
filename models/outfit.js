@@ -1,6 +1,8 @@
 var mongoose = require('mongoose');
+var Schema   = mongoose.Schema;
+var ObjectId = Schema.ObjectId;
 
-var OutfitSchema = new mongoose.Schema({
+var OutfitSchema = new Schema({
   top: String,
   bottom: {
     type: String,
