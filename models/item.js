@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema   = mongoose.Schema;
 var ObjectId = Schema.ObjectId;
 
-var ClosetSchema = new Schema({
+var ItemSchema = new Schema({
   name: {
     type: String,
     required: true
@@ -19,7 +19,8 @@ var ClosetSchema = new Schema({
   lastWorn: Date,
   color: String,
   material: String,
+  users: [ {type: Schema.ObjectId, ref: "User"} ],
   outfits: [ {type: Schema.ObjectId, ref: "Outfit"} ]
 });
 
-module.exports = mongoose.model('Closet', ClosetSchema);
+module.exports = mongoose.model('Item', ItemSchema);

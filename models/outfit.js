@@ -15,8 +15,8 @@ var OutfitSchema = new Schema({
   accessory: String,
   picture_url: String,
   lastWorn: Date,
-  users: [ {type: Schema.ObjectId, ref: "User"} ],
-  closets: [ {type: Schema.ObjectId, ref: "Closet"} ]
+
+  items: [ {type: Schema.ObjectId, ref: "Item"} ]
 });
 
 module.exports = mongoose.model('Outfit', OutfitSchema);

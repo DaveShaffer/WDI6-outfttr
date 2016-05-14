@@ -15,7 +15,7 @@ var UserSchema = new Schema({
     match: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)./,
     required: true
   },
-  outfits: [ {type: Schema.ObjectId, ref: "Outfit"} ]
+  items: [ {type: Schema.ObjectId, ref: "Item"} ]
 });
 
 module.exports = mongoose.model('User', UserSchema);
