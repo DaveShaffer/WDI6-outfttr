@@ -12,7 +12,7 @@ var ItemSchema = new Schema( {
     type: String,
     required: true
   }, // end item type
-  picture_url: {
+  avatar_url: {
     type: String,
     required: true
   }, // end item picture_url

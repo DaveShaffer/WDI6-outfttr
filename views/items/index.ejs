@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body class="container-fluid">
+  <header>
+    <% include ../partials/header %>
+  </header>
+
+<main>
+<ul>
+  <div class="row">
+    <% items.forEach(function(item) { %>
+     <form method="POST" action="/items/<%= item._id %>?_method=DELETE">
+      <div class="col-sm-6 col-md-3 set-height">
+        <li><a href="/items/<%= item._id %>"><%= item.name %></a></li>
+        <li><a href="/items/<%= item._id %>"><%= item.type %></a></li>
+        <li><img src="<%= item.avatar_url %>"></li>
+         <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+          </form>
+      </div>
+    <% }) %>
+  </div>
+</ul>
+<a href="/items/new" class="btn btn-primary">New</a>
+</main>
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+</body>
+</html>
