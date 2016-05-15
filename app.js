@@ -92,7 +92,7 @@ app.use(function(err, req, res, next) {
     message: err.message,
     error: {}
   } ); // end render err mssg
-} );
+} ); // end fnc status
 
 app.listen(process.env.PORT || 5000);
 
