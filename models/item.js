@@ -15,7 +15,7 @@ var ItemSchema = new Schema( {
   avatar_url: {
     type: String,
     required: true
-  }, // end item picture_url
+  }, // end item avatar_url
   isClean: Boolean,
   lastWorn: Date,
   color: String,
