@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 var User     = require('./models/user');
 var Outfit   = require('./models/outfit');
 var Item   = require('./models/item');
+var userid;
 
 // conncet to database
 mongoose.connect('mongodb://localhost/outfttr');
@@ -36,6 +37,7 @@ User.remove( {} )
   console.log('all users: ');
   allUsers.forEach(function(user) {
     console.log(user);
+    userid = user.id;
   } ); // end forEach fnc print users
 } ); // end fnc allUsers
 // end user seed
@@ -66,6 +68,7 @@ Item.remove( {} )
 .then(function(allItems) {
   console.log('all items: ');
   allItems.forEach(function(item) {
+    item.users = userid;
     console.log(item);
   } ); // end forEach fnc print items
   quit();
