@@ -68,5 +68,6 @@ Item.remove( {} )
   allItems.forEach(function(item) {
     console.log(item);
   } ); // end forEach fnc print items
+  quit();
 } ); // end fnc allItems
 // end item seed
