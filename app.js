@@ -17,7 +17,7 @@ var itemsRouter = require('./routes/items');
 var app      = express();
 var mongoose = require('mongoose');
 // connect to database
-var mongoUri = process.env.MONGODB_URI || 'mongodb://localhost/outfttr'
+var mongoUri = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/outfttr'
 
 mongoose.connect(mongoUri);
 
