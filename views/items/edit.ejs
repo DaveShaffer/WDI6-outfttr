@@ -10,13 +10,58 @@
   </header>
 
   <main>
-      <h3>EDIT</h3>
-
-    <form class="item-form" action="/items/<%= item._id %>?_method=PUT" method="post">
-      <% include _form %>
-      <a href="/items/<%= item._id %>" class="btn btn-primary">Back</a>
-      <button type="submit" class="btn btn-success">Save</button>
-    </form>
+  <h3>Edit Clothing Item</h3>
+  <form action="/items/<%= item._id %>?_method=PUT" method="post">
+      <div class="form-group">
+        <label for="avatar_url">Profile Photo</label>
+        <input type="file" id="file_input"/>
+        <p id="status">Please select a file</p>
+        <img style="border:1px solid gray;width:300px;"  id="preview" src=
+          <% if ( item.avatar_url == null) { %>
+            "/images/default.png"
+          <% } else { %>
+            "<%= item.avatar_url %>"
+          <% } %>
+        />
+        <input type="hidden" id="avatar_url" name="avatar_url" value=
+          <% if ( item.avatar_url == null) { %>
+            "/images/default.png"
+          <% } else { %>
+            "<%= item.avatar_url %>"
+          <% } %>
+        />
+        <p class="help-block">Must be smaller than 4 MB.</p>
+      </div>
+      <div class="form-group">
+        <label for="name">Title</label>
+        <input class="form-control" type="text" value="<%= item.name %>" name="name" id="name">
+      </div>
+          <div class="form-group">
+      <label for="color">Color:</label>
+      <input class="form-control" type="text" maxlength="20" value="<%= item.color %>" name="color" id="color">
+    </div>
+    <div class="form-group">
+      <label for="material">Material:</label>
+      <input class="form-control" type="text" maxlength="20" value="<%= item.material %>" name="material" id="material">
+    </div>
+    <div class="form-group">
+      <label for="type">Type of Clothing:</label>
+      <select name="type" id="item-type" value="<%= item.type %>">
+        <option value="shirt">Shirt</option>
+        <option value="pants">Pants/Dress</option>
+        <option value="shoes">Shoes</option>
+        <option value="accessory">Accessory</option>
+      </select>
+    </div>
+    <div class="form-group">
+    <label for="isClean">Clean?</label>
+    <input type="checkbox"
+          name="isClean"
+          <%= item.completed ? 'checked' : '' %> >
+    </div>
+    <a href="/items/<%= item._id %>" class="btn btn-primary">Back</a>
+    <button type="submit" class="btn btn-success">Save</button>
+  </form>
 
   </main>
 

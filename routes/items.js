@@ -73,7 +73,7 @@ router.get('/:id/edit', authenticate, function(req, res, next) {
 
 // UPDATE
 router.put('/:id', authenticate, function(req, res, next) {
-    var item = currentUse.items.id(req.params.id);
+    var item = currentUser.items.id(req.params.id);
     if(!item) return next(makeError(res, 'Document not found', 404));
     else{
             item.name = req.body.name;
