@@ -4,7 +4,7 @@ var passport = require('passport');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express', message: req.flash() });  // add the message
+  res.render('index', { title: 'Outfttr', message: req.flash() });  // add the message
 });
 
 // GET /signup

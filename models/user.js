@@ -1,11 +1,13 @@
 var mongoose = require('mongoose');
-var ObjectId = Schema.Objectid;
+var Schema = mongoose.Schema;
+var ObjectId = Schema.ObjectId;
 var bcrypt   = require('bcrypt-nodejs');
 var Item = require('./item');
 // var Closet = require('./closet');
 
 // create model user
 var UserSchema = new Schema( {
+  local : {
   name: String,
   email: {
     type: String,
@@ -19,6 +21,7 @@ var UserSchema = new Schema( {
     required: true
   }, // end user password
   items: [ {type: Schema.ObjectId, ref: "Item"} ]
+  }
 } ); // end UserSchemalosets : [Closet.schema]
 
 
