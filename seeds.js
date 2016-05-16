@@ -1,8 +1,13 @@
-var mongoose = require('mongoose');
-var User     = require('./models/user');
-var Outfit   = require('./models/outfit');
-var Item   = require('./models/item');
+var mongoose  = require('mongoose');
+var User      = require('./models/user');
+var Outfit    = require('./models/outfit');
+var Item      = require('./models/item');
+var useritems = [];
 var userid;
+var topid;
+var bottomid;
+var shoesid;
+var accessoryid;
 
 // conncet to database
 mongoose.connect('mongodb://localhost/outfttr');
@@ -37,8 +42,9 @@ User.remove( {} )
   console.log('all users: ');
   allUsers.forEach(function(user) {
     console.log(user);
-    userid = user.id;
+    if (!userid) userid = user.id; // save 1st user id
   } ); // end forEach fnc print users
+  console.log();
 } ); // end fnc allUsers
 // end user seed
 
@@ -68,10 +74,22 @@ Item.remove( {} )
 .then(function(allItems) {
   console.log('all items: ');
   allItems.forEach(function(item) {
-    item.users = userid;
-    console.log(item);
-  } ); // end forEach fnc print items
+    item.users = userid; // assign a user id to each item
+    useritems.push(item.id); // save item ids
+    console.log(item, useritems);
+  } ); // end forEach print items
+  console.log('assign item ids to user');
+  return User.findById(userid);
+} ) // end fnc allItems
+.then(function(updated) {
+  console.log('updated user: ', updated.name);
+  updated.items = useritems;
+  updated.update;
+  console.log(updated);
   quit();
-} ); // end fnc allItems
+  return user.save();
+}, function(err) {
+  return handleError(err);
+});
 // end item seed
 >>>>>>> master

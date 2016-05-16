@@ -26,7 +26,12 @@
     </div>
     <div class="form-group">
       <label for="type">Type of clothing</label>
-      <input class="form-control" type="text" maxlength="20" name="type" id="type">
+      <select name="type" id="item-type">
+        <option value="shirt">Shirt</option>
+        <option value="pants">Pants/Dress</option>
+        <option value="shoes">Shoes</option>
+        <option value="accessory">Accessory</option>
+      </select>
     </div>
     <input class="btn btn-primary" id='send' type="submit">
   </form>

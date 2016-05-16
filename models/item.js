@@ -20,7 +20,6 @@ var ItemSchema = new Schema( {
   lastWorn: Date,
   color: String,
   material: String,
-  users:   [ {type: Schema.ObjectId, ref: "User"} ],
   outfits: [ {type: Schema.ObjectId, ref: "Outfit"} ]
 } ); // end ItemSchema
 

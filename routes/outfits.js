@@ -50,7 +50,7 @@ router.post('/', authenticate, function(req, res, next) {
   };
   // Since a user's outfits are an embedded document, we just need to push a new
   // Outfit to the user's list of outfits and save the user.
-  currentUser.outfits.push(todo);
+  currentUser.outfits.push(item);
   currentUser.save()
   .then(function() {
     res.redirect('/outfits');
