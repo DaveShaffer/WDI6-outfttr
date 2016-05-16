@@ -10,38 +10,13 @@
   </header>
 
   <main>
+      <h3>EDIT</h3>
 
-  <form method="post" action="/items/<%= item._id %>">
-      <div class="form-group">
-        <label for="avatar_url">Profile Photo</label>
-        <input type="file" id="file_input"/>
-        <p id="status">Please select a file</p>
-        <img style="border:1px solid gray;width:300px;"  id="preview" src=
-          <% if ( item.avatar_url == null) { %>
-            "/images/default.png"
-          <% } else { %>
-            "<%= item.avatar_url %>"
-          <% } %>
-        />
-        <input type="hidden" id="avatar_url" name="avatar_url" value=
-          <% if ( item.avatar_url == null) { %>
-            "/images/default.png"
-          <% } else { %>
-            "<%= item.avatar_url %>"
-          <% } %>
-        />
-        <p class="help-block">Must be smaller than 4 MB.</p>
-      </div>
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input class="form-control" type="text" value="<%= item.name %>" name="name" id="name">
-      </div>
-      <div class="form-group">
-        <label for="type">Type</label>
-        <input class="form-control" type="text" value="<%= item.type %>" name="type" id="type">
-      </div>
-    <input class="btn btn-primary" id='send' type="submit">
-  </form>
+    <form class="item-form" action="/items/<%= item._id %>?_method=PUT" method="post">
+      <% include _form %>
+      <a href="/items/<%= item._id %>" class="btn btn-primary">Back</a>
+      <button type="submit" class="btn btn-success">Save</button>
+    </form>
 
   </main>
 

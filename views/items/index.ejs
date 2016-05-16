@@ -16,9 +16,8 @@
      <form method="POST" action="/items/<%= item._id %>?_method=DELETE">
       <div class="col-sm-6 col-md-3 set-height">
       <p><strong>Name:</strong> <a href="/items/<%= item._id %>"><%= item.name %></a></p>
-      <p><strong>Type of Clothing:</strong> <%= item.type %></p>
-        <img src="<%= item.avatar_url %>">
-         <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+      <img src="<%= item.avatar_url %>">
+      <button type="submit" class="btn btn-xs btn-danger">Delete</button>
           </form>
       </div>
     <% }) %>

@@ -11,10 +11,19 @@
 
   <main>
     <div>
-      <h3>SHOW</h3>
-      <p><b>Name: </b><%= item.name %></p>
-      <p><b>Typeof Clothing: </b><%= item.type %></p>
+      <h3>Name: </b><%= item.name %></h3>
       <img src="<%= item.avatar_url %>">
+      <p><b>Type of Clothing: </b><%= item.type %></p>
+      <p><b>Color: </b><%= item.color %></p>
+      <p><b>Material: </b><%= item.material %></p>
+      <p><b>Last Worn: </b><%= item.lastWorn %></p>
+      <p><b>Clean: </b>
+        <% if (item.isClean) { %>
+          <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+            <% } else { %>
+                <span class="glyphicon glyphicon-unchecked" aria-hidden="true"></span>
+            <% } %>
+      </p>
     </div>
 
     <a href="/items" class="btn btn-primary">Back</a>
