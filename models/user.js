@@ -7,15 +7,15 @@ var Item = require('./item');
 
 // create model user
 var UserSchema = new Schema( {
-  local : {
-  name: String,
-  email: {
+    local: {
+    name: String,
+    email: {
     type: String,
     match: /.+\@.+\..+/,
     unique: true,
     required: true
   }, // end user email
-  password: {
+    password: {
     type: String,
     match: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)./,
     required: true
