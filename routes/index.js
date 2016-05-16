@@ -45,6 +45,16 @@ router.get('/logout', function(req, res, next) {
   res.redirect('/');
 });
 
+// GET /contact
+router.get('/contact', function(req, res, next) {
+  res.render('contact.ejs', { message: req.flash() });
+});
+
+// GET /about
+router.get('/about', function(req, res, next) {
+  res.render('about.ejs', { message: req.flash() });
+});
+
 // Restricted page
 router.get('/secret', function(req, res, next) {
   if (currentUser) {
