@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body class="container-fluid">
+  <header>
+    <% include ../partials/header %>
+  </header>
+
+  <main>
+    <div>
+      <h3>SHOW</h3>
+      <p><b>Name: </b><%= item.name %></p>
+      <p><b>Typeof Clothing: </b><%= item.type %></p>
+      <img src="<%= item.avatar_url %>">
+    </div>
+
+    <a href="/items" class="btn btn-primary">Back</a>
+    <a href="/items/<%= item._id %>/edit" class="btn btn-danger">Edit</a>
+  </main>
+
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+</body>
+</html>
