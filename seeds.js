@@ -42,7 +42,7 @@ User.remove( {} )
   console.log('all users: ');
   allUsers.forEach(function(user) {
     console.log(user);
-    if (!userid) userid = user.id;
+    if (!userid) userid = user.id; // save 1st user id
   } ); // end forEach fnc print users
   console.log();
 } ); // end fnc allUsers
