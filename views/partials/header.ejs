@@ -1,0 +1,38 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <span class="glyphicon glyphicon glyphicon-tree-deciduous"></span>TODOs
+      </a>
+    </div>
+
+    <ul class="nav navbar-nav navbar-left">
+      <li><a href="/">Home</a></li>
+      <% if (currentUser) { %>
+        <li><a href="/todos">TODOs</a></li>
+      <% } %>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <% if (currentUser) { %>
+        <li><a href="#"><%= currentUser.local.email %></a></li>
+        <li><a href="/logout">Logout</a></li>
+      <% } else { %>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/signup">Signup</a></li>
+      <% } %>
+    </ul>
+  </div>
+</nav>
+<div class="flash">
+  <% if (typeof message !== 'undefined') { %>
+    <% if (typeof message.error !== 'undefined' && message.error.length > 0) { %>
+      <div class="bg-danger"><%= message.error %></div>
+    <% } %>
+    <% if (typeof message.info !== 'undefined' && message.info.length > 0) { %>
+      <div class="bg-info"><%= message.info %></div>
+    <% } %>
+    <% if (typeof message.success !== 'undefined' && message.success.length > 0) { %>
+      <div class="bg-success"><%= message.success %></div>
+    <% } %>
+  <% } %>
+</div>
