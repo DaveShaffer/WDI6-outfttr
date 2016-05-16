@@ -2,9 +2,14 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 
-/* GET home page. */
+/* GET index. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Outfttr', message: req.flash() });  // add the message
+});
+
+// GET /home
+router.get('/home', function(req, res, next) {
+  res.render('home.ejs', { message: req.flash() });
 });
 
 // GET /signup
