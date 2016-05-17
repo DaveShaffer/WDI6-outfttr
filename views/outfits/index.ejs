@@ -1,0 +1,25 @@
+<main>
+<ul>
+  <div class="row">
+    <% outfits.forEach(function(outfit) { %>
+      <% outfit.items.forEach(function(item){ %>
+     <form method="POST" action="/outfits/<%= outfit._id %>?_method=DELETE">
+      <div class="col-sm-6 col-md-3 set-height">
+      <img src="<%= item.avatar_url %>">
+      <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+          </form>
+      </div>
+      <% }) %>
+    <% }) %>
+  </div>
+</ul>
+<a href="/items/new" class="btn btn-primary">New</a>
+
+
+
+</main>
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+</body>
+</html>

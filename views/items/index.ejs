@@ -134,7 +134,7 @@
             </div>
         </div>
     </section>
-<!--
+
 <main>
 <ul>
   <div class="row">
@@ -144,7 +144,10 @@
       <p><strong>Name:</strong> <a href="/items/<%= item._id %>"><%= item.name %></a></p>
       <img src="<%= item.avatar_url %>">
       <button type="submit" class="btn btn-xs btn-danger">Delete</button>
-          </form>
+    </form>
+    <form method="post" action="/outfits">
+      <button class="btn btn-primary" id='send' type="submit">Add to Outfit</button>
+      </form>
       </div>
     <% }) %>
   </div>
@@ -152,7 +155,8 @@
 <a href="/items/new" class="btn btn-primary">New</a>
 
 
-</main> -->
+
+</main>
   <footer>
     <% include ../partials/footer %>
   </footer>
