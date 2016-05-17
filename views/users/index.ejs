@@ -1,0 +1,15 @@
+<main>
+<ul>
+  <div class="row">
+    <% users.forEach(function(user) { %>
+     <form method="POST" action="/users/<%= user._id %>?_method=DELETE">
+      <div class="col-sm-6 col-md-3 set-height">
+      <p><strong>Name:</strong> <a href="/users/<%= user._id %>"><%= user.name %></a></p>
+          </form>
+      </div>
+    <% }) %>
+  </div>
+</ul>
+
+
+</main>

@@ -52,15 +52,14 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="page-scroll" href="/login">Log In</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="/about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="/contact">Contact</a>
-                    </li>
+                    <li><a class="page-scroll" href="/about">About</a></li>
+                    <li><a class="page-scroll" href="/contact">Contact</a></li>
+                    <% if (currentUser) { %>
+                      <li><a href="#"><%= currentUser.local.email %></a>a></li>
+                      <li><a href="/logout">Logout</a>a></li>
+                    <% } else { %>
+                        <li><a class="page-scroll" href="/login">Log In</a></li>
+                    <% } %>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
