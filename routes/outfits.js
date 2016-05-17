@@ -42,7 +42,7 @@ router.get('/:id', authenticate, function(req, res, next) {
 // CREATE
 router.post('/', authenticate, function(req, res, next) {
     var outfit = {
-      items
+
     };
     var items = global.currentUser.items;
     var item = currentUser.items.id(req.params.id);

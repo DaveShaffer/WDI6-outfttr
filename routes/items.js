@@ -19,7 +19,7 @@ function authenticate(req, res, next) {
 
 // INDEX
 router.get('/', authenticate, function(req, res, next) {
-    // get all the todos and render the index view
+    // get all the items and render the index view
     var items = global.currentUser.items;
     console.log('currentUser', global.currentUser);
     res.render('items/index', { items: items });
