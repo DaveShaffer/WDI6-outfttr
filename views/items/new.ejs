@@ -1,56 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <% include ../partials/head %>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Outfttr</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/creative.css" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
 
-<body class="container-fluid">
-  <header>
-    <% include ../partials/header %>
-  </header>
+<body id="page-top">
 
-  <main>
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="/">Home</a>
+            </div>
 
-  <h3>Add Clothing Item:</h3>
-  <form method="post" action="/items">
-      <div class="form-group">
-        <label for="avatar_url">Picture</label>
-        <input type="file" id="file_input"/>
-        <p id="status">Please select a file</p>
-        <img style="border:1px solid gray;width:300px;"  id="preview" src="">
-        <input type="hidden" id="avatar_url" name="avatar_url" value="/images/default.png">
-      </div>
-    <div class="form-group">
-      <label for="title">Title (max 20 characters):</label>
-      <input class="form-control" type="text" maxlength="20" name="name" id="name">
-    </div>
-    <div class="form-group">
-      <label for="color">Color:</label>
-      <input class="form-control" type="text" maxlength="20" name="color" id="color">
-    </div>
-    <div class="form-group">
-      <label for="material">Material:</label>
-      <input class="form-control" type="text" maxlength="20" name="material" id="material">
-    </div>
-    <div class="form-group">
-      <label for="type">Type of Clothing:</label>
-      <select name="type" id="item-type">
-        <option value="shirt">Shirt</option>
-        <option value="pants">Pants/Dress</option>
-        <option value="shoes">Shoes</option>
-        <option value="accessory">Accessory</option>
-      </select>
-    </div>
-    <div class="form-group">
-    <label for="isClean">Clean?</label>
-    <input type="checkbox"
-          name="isClean"
-          <%= item.completed ? 'checked' : '' %> >
-    </div>
-    <input class="btn btn-primary" id='send' type="submit">
-  </form>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="/">Log Out</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
 
-  </main>
+    <header>
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1>Outfttr</h1>
+                <hr>
+
+                  <main>
+
+                    <h3>Add Clothing Item:</h3>
+                    <form method="post" action="/items">
+                        <div class="form-group">
+                          <label for="avatar_url">Picture</label>
+                          <input type="file" id="file_input"/>
+                          <p id="status">Please select a file</p>
+                          <img style="border:1px solid gray;width:300px;"  id="preview" src="">
+                          <input type="hidden" id="avatar_url" name="avatar_url" value="/images/default.png">
+                        </div>
+                      <div class="form-group">
+                        <label for="title">Title (max 20 characters):</label>
+                        <input class="form-control" type="text" maxlength="20" name="name" id="name">
+                      </div>
+                      <div class="form-group">
+                        <label for="color">Color:</label>
+                        <input class="form-control" type="text" maxlength="20" name="color" id="color">
+                      </div>
+                      <div class="form-group">
+                        <label for="material">Material:</label>
+                        <input class="form-control" type="text" maxlength="20" name="material" id="material">
+                      </div>
+                      <div class="form-group">
+                        <label for="type">Type of Clothing:</label>
+                        <select name="type" id="item-type">
+                          <option value="shirt">Shirt</option>
+                          <option value="pants">Pants/Dress</option>
+                          <option value="shoes">Shoes</option>
+                          <option value="accessory">Accessory</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                      <label for="isClean">Clean?</label>
+                      <input type="checkbox"
+                            name="isClean"
+                            <%= item.completed ? 'checked' : '' %> >
+                      </div>
+                      <input class="btn btn-primary" id='send' type="submit">
+                    </form>
+                  </main>
+            </div>
+        </div>
+    </header>
+
+
 
   <footer>
     <% include ../partials/footer %>
