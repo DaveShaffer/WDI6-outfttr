@@ -35,8 +35,9 @@ router.get('/new', authenticate, function(req, res, next) {
 /// SHOW
 router.get('/:id', authenticate, function(req, res, next) {
   var outfit = currentUser.outfits.id(req.params.id);
+  var items = global.currentUser.items;
   if (!outfit) return next(makeError(res, 'Document not found', 404));
-  res.render('outfits/show', { outfit: outfit } );
+  res.render('outfits/show', { outfit: outfit, items: items } );
 });
 
 // CREATE
