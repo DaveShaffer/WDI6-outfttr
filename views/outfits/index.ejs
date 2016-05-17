@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<header>Outfttr</header>
+<body>
+<main>
+<ul>
+  <div class="row">
+  <h1>Your Outfits</h1>
+    <% outfits.forEach(function(outfit) { %>
+     <form method="POST" action="/outfits/<%= outfit._id %>?_method=DELETE">
+      <div class="col-sm-6 col-md-3 set-height">
+      <h3><a href="/outfits/<%= outfit._id %>"><%= outfit.name %></a></h3>
+      <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+      </div>
+     </form>
+    <% }) %>
+    <a href="/outfits/new" class="btn btn-primary">New</a>
+  </div>
+</ul>
+
+
+</main>
+
+
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+</body>
+</html>
