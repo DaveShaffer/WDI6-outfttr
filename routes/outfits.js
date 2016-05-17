@@ -22,7 +22,8 @@ function authenticate(req, res, next) {
 // INDEX
 router.get('/', authenticate, function(req, res, next) {
   var outfits = global.currentUser.outfits;
-  res.render('outfits/index', { outfits: outfits });
+  var items = global.currentUser.items;
+  res.render('outfits/index', { outfits: outfits, items: items });
 });
 
 router.get('/new', authenticate, function(req, res, next) {
