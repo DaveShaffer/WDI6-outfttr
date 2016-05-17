@@ -3,6 +3,7 @@ var Schema = mongoose.Schema;
 var ObjectId = Schema.ObjectId;
 var bcrypt   = require('bcrypt-nodejs');
 var Item = require('./item');
+var Outfit = require('./outfit');
 // var Closet = require('./closet');
 
 // create model user
@@ -22,7 +23,8 @@ var UserSchema = new Schema( {
     } // end user password
   },
   // items: [ {type: Schema.ObjectId, ref: "Item"} ]
-  items: [ Item.schema ]
+  items: [ Item.schema ],
+  outfits: [ Outfit.schema ]
 } ); // end UserSchemalosets : [Closet.schema]
 
 

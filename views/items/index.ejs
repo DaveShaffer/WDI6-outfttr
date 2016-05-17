@@ -134,49 +134,25 @@
             </div>
         </div>
     </section>
-
-<!--<main>
-  <h3>Add Clothing Item:</h3>
-  <form method="post" action="/items">
-      <div class="form-group">
-        <label for="avatar_url">Picture</label>
-        <input type="file" id="file_input"/>
-        <p id="status">Please select a file</p>
-        <img style="border:1px solid gray;width:300px;"  id="preview" src="">
-        <input type="hidden" id="avatar_url" name="avatar_url" value="/images/default.png">
+<!--
+<main>
+<ul>
+  <div class="row">
+    <% items.forEach(function(item) { %>
+     <form method="POST" action="/items/<%= item._id %>?_method=DELETE">
+      <div class="col-sm-6 col-md-3 set-height">
+      <p><strong>Name:</strong> <a href="/items/<%= item._id %>"><%= item.name %></a></p>
+      <img src="<%= item.avatar_url %>">
+      <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+          </form>
       </div>
-    <div class="form-group">
-      <label for="title">Title (max 20 characters):</label>
-      <input class="form-control" type="text" maxlength="20" name="name" id="name">
-    </div>
-    <div class="form-group">
-      <label for="color">Color:</label>
-      <input class="form-control" type="text" maxlength="20" name="color" id="color">
-    </div>
-    <div class="form-group">
-      <label for="material">Material:</label>
-      <input class="form-control" type="text" maxlength="20" name="material" id="material">
-    </div>
-    <div class="form-group">
-      <label for="type">Type of Clothing:</label>
-      <select name="type" id="item-type">
-        <option value="shirt">Shirt</option>
-        <option value="pants">Pants/Dress</option>
-        <option value="shoes">Shoes</option>
-        <option value="accessory">Accessory</option>
-      </select>
-    </div>
-    <div class="form-group">
-    <label for="isClean">Clean?</label>
-    <input type="checkbox"
-          name="isClean"
-          <%= item.completed ? 'checked' : '' %> >
-    </div>
-    <input class="btn btn-primary" id='send' type="submit">
-  </form>
+    <% }) %>
+  </div>
+</ul>
+<a href="/items/new" class="btn btn-primary">New</a>
 
 
-</main>-->
+</main> -->
   <footer>
     <% include ../partials/footer %>
   </footer>
