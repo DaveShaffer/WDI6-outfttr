@@ -55,8 +55,8 @@
                     <li><a class="page-scroll" href="/about">About</a></li>
                     <li><a class="page-scroll" href="/contact">Contact</a></li>
                     <% if (currentUser) { %>
-                      <li><a href="#"><%= currentUser.local.email %></a>a></li>
-                      <li><a href="/logout">Logout</a>a></li>
+                      <li><a href="#"><%= currentUser.local.email %></a></li>
+                      <li><a href="/logout">Logout</a></li>
                     <% } else { %>
                         <li><a class="page-scroll" href="/login">Log In</a></li>
                     <% } %>
