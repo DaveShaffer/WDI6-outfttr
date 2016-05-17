@@ -40,9 +40,9 @@ router.get('/new', authenticate, function(req, res, next) {
 
 // SHOW
 router.get('/:id', authenticate, function(req, res, next) {
-    var user = currentUser.user.id(req.params.id);
-    if(!user) return next(makeError(res, 'Document not found', 404));
-    res.render('users/show', { user: user });
+    var item = currentUser.item.id(req.params.id);
+    if(!item) return next(makeError(res, 'Document not found', 404));
+    res.render('items/show', { item: item });
 });
 
 // CREATE
