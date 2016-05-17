@@ -39,7 +39,7 @@ function handleError(err) {
       if(err){
         console.log(err)
       } else {
-        console.log("student was saved");
+        console.log("outfit was saved");
       }
     })
   };

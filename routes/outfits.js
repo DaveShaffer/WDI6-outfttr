@@ -27,9 +27,9 @@ router.get('/', authenticate, function(req, res, next) {
 
 router.get('/new', authenticate, function(req, res, next) {
     var outfit = {
-
+      name: ''
     };
-    res.render('items/new', { item: item });
+    res.render('outfits/new', { outfit: outfit });
 });
 
 /// SHOW
@@ -42,11 +42,11 @@ router.get('/:id', authenticate, function(req, res, next) {
 // CREATE
 router.post('/', authenticate, function(req, res, next) {
     var outfit = {
-
+      name: req.body.name
     };
     var items = global.currentUser.items;
     var item = currentUser.items.id(req.params.id);
-    currentUser.outfit.items.push(item);
+    currentUser.outfits.push(outfit);
     currentUser.save()
         .then(function() {
             res.redirect('/outfits');
