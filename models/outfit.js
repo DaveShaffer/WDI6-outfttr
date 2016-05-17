@@ -4,6 +4,7 @@ var ObjectId = Schema.ObjectId;
 
 // create model outfit
 var OutfitSchema = new Schema( {
+  name: String,
   items: [ {type: Schema.ObjectId, ref: "Item"} ]
 } ); // end OutfitSchema
 
