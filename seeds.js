@@ -27,7 +27,7 @@ function handleError(err) {
   var item2 = new Item( {name: 'Red Heels', type: 'Shoe', avatar_url: 'http://static.kurtgeiger.us/skin/frontend/kurtgeiger/default/images/homepage/2016/wk19/tile-1-us.jpg' })
   var item3 = new Item( {name: 'Necklace', type: 'Accessory', avatar_url: 'http://cdn-images.farfetch.com/11/23/76/94/11237694_6130048_322.jpg' })
 
-  var outfit1 = new Outfit( { item: [ item1, item2, item3 ] });
+  var outfit1 = new Outfit( { name: "Monday Outfit", item: [ item1, item2, item3 ] });
 
   var items = [item1, item2, item3];
 
