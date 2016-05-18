@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var User = require('../models/user')
+var User = require('../models/user');
 
 function authenticate(req, res, next) {
     if (!req.isAuthenticated()) {
@@ -23,5 +23,6 @@ router.get('/:id', authenticate, function(req, res, next) {
     if(!currentUser) return next(makeError(res, 'Document not found', 404));
     res.render('users/show', { user: currentUser });
 });
+
 
 module.exports = router;

@@ -12,10 +12,20 @@
   <main>
     <div>
       <h3><b>Name: </b><%= outfit.name %></h3>
+
+
+      <p>Add items to oufit</p>
+      <% items.forEach(function(item) { %>
+          <form action="/outfits/<%= outfit._id %>?_method=PUT" method="post">
+          <img src="<%= item.avatar_url %>">
+          <button class="btn btn-primary" id='send' type="submit">Add to outfit</button>
+        </form>
+        <% }) %>
     </div>
 
     <a href="/outfits" class="btn btn-primary">Back</a>
-    <a href="/outfits/<%= outfit._id %>/edit" class="btn btn-danger">Edit</a>
+    <a href="/outfits<%= outfit._id %>/edit" class="btn btn-danger">Edit</a>
+
   </main>
 
   <footer>

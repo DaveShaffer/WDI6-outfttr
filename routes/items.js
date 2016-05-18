@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
-var Item = require('../models/item')
+var Item = require('../models/item');
+var Outfit = require('../models/outfit')
+
 
 function makeError(res, message, status) {
     res.statusCode = status;
@@ -40,7 +42,7 @@ router.get('/new', authenticate, function(req, res, next) {
 
 // SHOW
 router.get('/:id', authenticate, function(req, res, next) {
-    var item = currentUser.item.id(req.params.id);
+    var item = currentUser.items.id(req.params.id);
     if(!item) return next(makeError(res, 'Document not found', 404));
     res.render('items/show', { item: item });
 });

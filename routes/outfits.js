@@ -22,9 +22,11 @@ function authenticate(req, res, next) {
 // INDEX
 router.get('/', authenticate, function(req, res, next) {
   var outfits = global.currentUser.outfits;
-  res.render('outfits/index', { outfits: outfits });
+  var items = global.currentUser.items;
+  res.render('outfits/index', { outfits: outfits, items: items });
 });
 
+//NEW
 router.get('/new', authenticate, function(req, res, next) {
     var outfit = {
       name: ''
@@ -35,8 +37,9 @@ router.get('/new', authenticate, function(req, res, next) {
 /// SHOW
 router.get('/:id', authenticate, function(req, res, next) {
   var outfit = currentUser.outfits.id(req.params.id);
+  var items = global.currentUser.items;
   if (!outfit) return next(makeError(res, 'Document not found', 404));
-  res.render('outfits/show', { outfit: outfit } );
+  res.render('outfits/show', { outfit: outfit, items: items } );
 });
 
 // CREATE
@@ -44,8 +47,6 @@ router.post('/', authenticate, function(req, res, next) {
     var outfit = {
       name: req.body.name
     };
-    var items = global.currentUser.items;
-    var item = currentUser.items.id(req.params.id);
     currentUser.outfits.push(outfit);
     currentUser.save()
         .then(function() {
@@ -54,6 +55,37 @@ router.post('/', authenticate, function(req, res, next) {
             return next(err);
         });
 });
+
+// EDIT
+router.get('/:id/edit', authenticate, function(req, res, next) {
+    var outfits = currentUser.outfits.id(req.params.id);
+    if(!outfit) return next(makeError(res, 'Document not found', 404));
+    res.render('outfits/edit', { outfit: outfit });
+});
+
+// UPDATE
+router.put('/:id', authenticate, function(req, res, next) {
+  var outfit = currentUser.outfits.id(req.params.id);
+  console.log('req.query:', req.query);
+  Item.findById(req.query.item)
+    .then(function(item){
+      console.log('item:', item);
+      outfit.name = req.body.outfit;
+      item = req.body.prompt;
+    });
+    outfit.save()
+  //  if(!outfit) return next(makeError(res, 'Document not found', 404));
+   // else{
+         //   outfit.name = req.body.outfit;
+           // currentUser.outfit.items.push(item);
+           // currentUser.save()
+            .then(function(saved){
+               res.redirect('/outfits');
+           }, function(err){
+               return next(err)
+            });
+  });
+// });
 
 
 // DESTROY
