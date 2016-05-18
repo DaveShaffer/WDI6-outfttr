@@ -31,99 +31,6 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-</head>
-
-<body id="page-top">
-
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="/">Home</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="page-scroll" href="/">Log Out</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="/about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="/contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
-
-    <header>
-        <div class="header-content">
-            <div class="header-content-inner">
-                <h1>Outfttr</h1>
-                <hr>
-
-                  <main>
-
-                    <h3>Add Clothing Item:</h3>
-                    <form method="post" action="/items">
-                        <div class="form-group">
-                          <label for="avatar_url">Picture</label>
-                          <input type="file" id="file_input"/>
-                          <p id="status">Please select a file</p>
-                          <img style="border:1px solid gray;width:300px;"  id="preview" src="">
-                          <input type="hidden" id="avatar_url" name="avatar_url" value="/images/default.png">
-                        </div>
-                      <div class="form-group">
-                        <label for="title">Title (max 20 characters):</label>
-                        <input class="form-control" type="text" maxlength="20" name="name" id="name">
-                      </div>
-                      <div class="form-group">
-                        <label for="color">Color:</label>
-                        <input class="form-control" type="text" maxlength="20" name="color" id="color">
-                      </div>
-                      <div class="form-group">
-                        <label for="material">Material:</label>
-                        <input class="form-control" type="text" maxlength="20" name="material" id="material">
-                      </div>
-                      <div class="form-group">
-                        <label for="type">Type of Clothing:</label>
-                        <select name="type" id="item-type">
-                          <option value="shirt">Shirt</option>
-                          <option value="pants">Pants/Dress</option>
-                          <option value="shoes">Shoes</option>
-                          <option value="accessory">Accessory</option>
-                        </select>
-                      </div>
-                      <div class="form-group">
-                      <label for="isClean">Clean?</label>
-                      <input type="checkbox"
-                            name="isClean"
-                            <%= item.completed ? 'checked' : '' %> >
-                      </div>
-                      <input class="btn btn-primary" id='send' type="submit">
-                    </form>
-                  </main>
-            </div>
-        </div>
-    </header>
-
-
-
-  <footer>
-    <% include ../partials/footer %>
-  </footer>
  <script type="text/javascript">
 
 /*
@@ -190,5 +97,95 @@ function init_upload(){
 })();
 
   </script>
+</head>
+
+<body style="background-color:#f05f40;" id="page-top">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="/">Home</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="page-scroll" href="/items">My Closet</a></li>
+                    <li><a class="page-scroll" href="/outfits">My Outfits</a></li>
+                    <% if (currentUser) { %>
+                      <li><a class= "page-scroll" href="/users/<%= currentUser.id %>"><%= currentUser.local.email %></a></li>
+                      <li><a href="/logout">Logout</a></li>
+                    <% } else { %>
+                        <li><a class="page-scroll" href="/login">Log In</a></li>
+                    <% } %>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+  <section class="bg-primary" id="hom">
+    <div class="container">
+      <div class="header-content-inner">
+        <h1 align="center">Add Clothing Item:</h1>
+        <hr>
+
+        <main>
+        <ul>
+          <form method="post" action="/items">
+            <div class="form-group">
+              <label for="avatar_url">Picture</label>
+              <input type="file" id="file_input"/>
+              <p id="status">Please select a file</p>
+              <img style="border:1px solid gray;width:300px;"  id="preview" src="">
+              <input type="hidden" id="avatar_url" name="avatar_url" value="/images/default.png">
+            </div>
+            <div class="form-group">
+              <label for="title">Title (max 20 characters):</label>
+              <input class="form-control" type="text" maxlength="20" name="name" id="name">
+            </div>
+            <div class="form-group">
+              <label for="color">Color:</label>
+              <input class="form-control" type="text" maxlength="20" name="color" id="color">
+            </div>
+            <div class="form-group">
+              <label for="material">Material:</label>
+              <input class="form-control" type="text" maxlength="20" name="material" id="material">
+            </div>
+            <div class="form-group">
+              <label for="type">Type of Clothing:</label>
+              <select name="type" id="item-type">
+                <option value="shirt">Shirt</option>
+                <option value="pants">Pants/Dress</option>
+                <option value="shoes">Shoes</option>
+                <option value="accessory">Accessory</option>
+              </select>
+            </div>
+            <div class="form-group">
+            <label for="isClean">Clean?</label>
+            <input type="checkbox"
+                  name="isClean"
+                  <%= item.completed ? 'checked' : '' %> >
+            </div>
+            <input class="btn btn-primary" id='send' type="submit">
+          </form>
+        </ul>
+      </main>
+    </div>
+  </div>
+  </section>
+
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+
 </body>
 </html>
