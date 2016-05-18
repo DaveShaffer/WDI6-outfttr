@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Outfttr</title>
+    <title>Outfttr | Create New Outfit</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -33,7 +33,7 @@
 
 </head>
 
-<body>
+<body style="background-color:#f05f40;" id="page-top">
 
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
@@ -66,12 +66,24 @@
         <!-- /.container-fluid -->
     </nav>
 
-<h3>Create an Outfit</h3>
-<form method="post" action="/outfits">
-    <div class="form-group">
-      <label for="title">Name of Outfit:</label>
-        <input class="form-control" type="text" maxlength="20" name="name" id="name">
+  <section class="bg-primary" id="hom">
+    <div class="container">
+      <div class="header-content-inner">
+        <h1 align="center">Create An Outfit</h1><hr>
+        <form method="post" action="/outfits">
+            <div class="form-group">
+              <label for="title">Name of Outfit:</label>
+                <input class="form-control" type="text" maxlength="20" name="name" id="name">
+            </div>
+            <input class="btn btn-primary" id='send' type="submit">
+        </form>
+      </div>
     </div>
-    <input class="btn btn-primary" id='send' type="submit">
+  </section>
+
+
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
 </body>
 </html>
