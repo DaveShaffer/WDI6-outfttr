@@ -46,8 +46,6 @@ router.post('/', authenticate, function(req, res, next) {
     var outfit = {
       name: req.body.name
     };
-    var items = global.currentUser.items;
-    var item = currentUser.items.id(req.params.id);
     currentUser.outfits.push(outfit);
     currentUser.save()
         .then(function() {
@@ -60,26 +58,33 @@ router.post('/', authenticate, function(req, res, next) {
 // EDIT
 router.get('/:id/edit', authenticate, function(req, res, next) {
     var outfits = currentUser.outfits.id(req.params.id);
-    var items = global.currentUser.items;
-    if(!item) return next(makeError(res, 'Document not found', 404));
-    res.render('outfitss/edit', { outfit: outfit });
+    if(!outfit) return next(makeError(res, 'Document not found', 404));
+    res.render('outfits/edit', { outfit: outfit });
 });
 
 // UPDATE
 router.put('/:id', authenticate, function(req, res, next) {
-    var outfit = currentUser.outfits.id(req.params.id);
-    if(!outfit) return next(makeError(res, 'Document not found', 404));
-    else{
-            outfit.name = req.body.outfit;
-            currentUser.outfit.items.push(item);
-            currentUser.save()
+  var outfit = currentUser.outfits.id(req.params.id);
+  console.log('req.query:', req.query);
+  Item.findById(req.query.item)
+    .then(function(item){
+      console.log('item:', item);
+      outfit.name = req.body.outfit;
+      item = req.body.prompt;
+    });
+    outfit.save()
+  //  if(!outfit) return next(makeError(res, 'Document not found', 404));
+   // else{
+         //   outfit.name = req.body.outfit;
+           // currentUser.outfit.items.push(item);
+           // currentUser.save()
             .then(function(saved){
-                res.redirect('/items');
-            }, function(err){
-                return next(err)
+               res.redirect('/outfits');
+           }, function(err){
+               return next(err)
             });
-    }
-});
+  });
+// });
 
 
 // DESTROY
