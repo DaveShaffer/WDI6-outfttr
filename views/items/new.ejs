@@ -104,13 +104,9 @@ function init_upload(){
         <!-- /.container-fluid -->
     </nav>
 
-  <section class="bg-primary" id="hom">
     <div class="container">
       <div class="header-content-inner">
-        <h1 align="center">Add Clothing Item:</h1>
-        <hr>
-
-        <main>
+        <h1 align="center">Add Clothing Item:</h1><hr>
         <ul>
           <form method="post" action="/items">
             <div class="form-group">
@@ -147,13 +143,11 @@ function init_upload(){
                   name="isClean"
                   <%= item.completed ? 'checked' : '' %> >
             </div>
-            <input class="btn btn-primary" id='send' type="submit">
+            <input class="btn btn-default" id='send' type="submit">
           </form>
         </ul>
-      </main>
     </div>
   </div>
-  </section>
 
   <footer>
     <% include ../partials/footer %>
