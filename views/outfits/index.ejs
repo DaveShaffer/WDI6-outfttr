@@ -5,14 +5,39 @@
   <% include ../partials/head %>
 </head>
 
-<body style="background-color:#f05f40;" class="container-fluid">
-  <header>
-    <% include ../partials/header %>
-  </header>
+<body style="background-color:#f05f40;" id="page-top">
 
-    <div class="container">
-      <div class="header-content-inner">
-      <h1 align="center">Your Outfits</h1><hr>
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="/">Home</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="page-scroll" href="/items">My Closet</a></li>
+                    <li><a class="page-scroll" href="/outfits">My Outfits</a></li>
+                    <% if (currentUser) { %>
+                      <li><a class= "page-scroll" href="/users/<%= currentUser.id %>"><%= currentUser.local.email %></a></li>
+                      <li><a href="/logout">Logout</a></li>
+                    <% } else { %>
+                        <li><a class="page-scroll" href="/login">Log In</a></li>
+                    <% } %>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+      <h1 align="center">My Outfits</h1><hr>
         <% outfits.forEach(function(outfit) { %>
         <form method="POST" action="/outfits/<%= outfit._id %>?_method=DELETE">
           <div class="col-sm-6 col-md-3 set-height">
