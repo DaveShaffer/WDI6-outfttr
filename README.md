@@ -42,7 +42,15 @@ New users create an account and build a database (closet) of pant, shirts, dress
 ## USER STORIES
 > Wendy Waxler is about to be late for work.  She has to be in her car and driving to work in less than an hour or she'll hit peak rush-hour traffic.  If only there was some way for her to look through her closet and put an outfit together while she was eating breakfast and putting on makeup.  Along comes outfttr and her prayers are answered.  With her smart phone she can see today's forecast, which items of clothes need to cleaned and when each item was last worn.  She knows it should rain later today, so she plans to wear boots instead of sandals.  Since the high temperature is predicted to only be 45, she is going to wear her wool blazer, except it is at the cleaners.  So she picks out a sweater instead.  When she's ready to get dressed, she has already decided what to wear, she grabs each item and gets ready to rule the day.
 
+## SITE MAP
+
+![Site Map]('https://github.com/DaveShaffer/WDI6-outFttr/blob/master/images/Possible%20site%20map%20(1).png')
+
 ## WIREFRAMES
+
+![Login Page]('https://github.com/DaveShaffer/WDI6-outFttr/blob/master/images/Login%20Page%20(1).png')
+
+![Create an Outfit]('https://github.com/DaveShaffer/WDI6-outFttr/blob/master/images/Create%20New%20Outfit%20page%20(1).png')
 
 ## MAJOR HURDLES
  - routing
