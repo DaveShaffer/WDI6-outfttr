@@ -9,7 +9,7 @@ var Outfit = require('./outfit');
 // create model user
 var UserSchema = new Schema( {
   name: String,
-  Gender: String,
+  // Gender: String,
   local : {
       email: {
       type: String,
