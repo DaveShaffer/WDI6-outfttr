@@ -14,8 +14,8 @@
       <h3><b>Name: </b><%= outfit.name %></h3>
       <p>Current items</p>
       <ul>
-      <% outfit.items.forEach(function(item) { %>
-        <li><%= item.name %></li>
+      <% items.forEach(function(item) { %>
+        <img src="<%= item.avatar_url %>">
       <% }) %>
       </ul>
 
@@ -31,7 +31,6 @@
     </div>
 
     <a href="/outfits" class="btn btn-primary">Back</a>
-    <a href="/outfits<%= outfit._id %>/edit" class="btn btn-danger">Edit</a>
 
   </main>
 

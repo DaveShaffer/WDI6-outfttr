@@ -13,8 +13,8 @@
     <div>
       <h3><b>Name: </b><%= outfit.name %></h3>
       <ul>
-      <% outfit.items.forEach(function(item) { %>
-        <li><%= item.name %></li>
+      <% items.forEach(function(item) { %>
+        <img src="<%= item.avatar_url %>">
       <% }) %>
       </ul>
 
