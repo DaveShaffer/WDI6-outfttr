@@ -57,6 +57,30 @@ router.post('/', authenticate, function(req, res, next) {
         });
 });
 
+// EDIT
+router.get('/:id/edit', authenticate, function(req, res, next) {
+    var outfits = currentUser.outfits.id(req.params.id);
+    var items = global.currentUser.items;
+    if(!item) return next(makeError(res, 'Document not found', 404));
+    res.render('outfitss/edit', { outfit: outfit });
+});
+
+// UPDATE
+router.put('/:id', authenticate, function(req, res, next) {
+    var outfit = currentUser.outfits.id(req.params.id);
+    if(!outfit) return next(makeError(res, 'Document not found', 404));
+    else{
+            outfit.name = req.body.outfit;
+            currentUser.outfit.items.push(item);
+            currentUser.save()
+            .then(function(saved){
+                res.redirect('/items');
+            }, function(err){
+                return next(err)
+            });
+    }
+});
+
 
 // DESTROY
 router.delete('/:id', authenticate, function(req, res, next) {

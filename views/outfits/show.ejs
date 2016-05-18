@@ -16,12 +16,9 @@
 
       <p>Add items to oufit</p>
       <% items.forEach(function(item) { %>
-        <form method="POST" action="/items/<%= item._id %>?_method=DELETE">
-          <div class="col-sm-6 col-md-3 set-height">
-              <img src="<%= item.avatar_url %>">
-          </div>
-        <form method="post" action="/outfits">
-           <button class="btn btn-primary" id='send' type="submit">Add to outfit</button>
+          <form action="/outfits/<%= outfit._id %>?_method=PUT" method="post">
+          <img src="<%= item.avatar_url %>">
+          <button class="btn btn-primary" id='send' type="submit">Add to outfit</button>
         </form>
         <% }) %>
     </div>
