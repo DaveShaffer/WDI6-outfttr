@@ -54,8 +54,6 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a class="page-scroll" href="/items">My Closet</a></li>
                     <li><a class="page-scroll" href="/outfits">My Outfits</a></li>
-                    <!-- <li><a class="page-scroll" href="/about">About</a></li>
-                    <li><a class="page-scroll" href="/contact">Contact</a></li> -->
                     <% if (currentUser) { %>
                       <li><a class= "page-scroll" href="/users/<%= currentUser.id %>"><%= currentUser.local.email %></a></li>
                       <li><a href="/logout">Logout</a></li>
@@ -69,36 +67,34 @@
         <!-- /.container-fluid -->
     </nav>
 
-    <header>
-        <div class="header-content">
-            <div class="header-content-inner">
-                <h1>Outfttr</h1>
-                <hr>
+  <section class="bg-primary" id="hom">
+    <div class="container">
+      <div class="header-content-inner">
+        <h1 align="center">My Closet</h1>
+        <hr>
 
-                    <main>
-                    <ul>
-                      <div class="row">
-                        <% items.forEach(function(item) { %>
-                         <form method="POST" action="/items/<%= item._id %>?_method=DELETE">
-                          <div class="col-sm-6 col-md-3 set-height">
-                          <p><strong>Name:</strong> <a href="/items/<%= item._id %>"><%= item.name %></a></p>
-                          <img src="<%= item.avatar_url %>">
-                          <button type="submit" class="btn btn-xs btn-danger">Delete</button>
-                              </form>
-                          </div>
-                          <form method="post" action="/outfits">
-                            <button class="btn btn-primary" id='send' type="submit">Add to outfit</button>
-                        </form>
-                        <% }) %>
-                      </div>
-                    </ul>
-                    <a href="/items/new" class="btn btn-primary">New</a>
-
-
-                    </main>
-            </div>
-        </div>
-    </header>
+        <main>
+        <ul>
+          <div class="row">
+            <% items.forEach(function(item) { %>
+             <form method="POST" action="/items/<%= item._id %>?_method=DELETE">
+              <div class="col-sm-6 col-md-3 set-height">
+              <p><strong>Name:</strong> <a href="/items/<%= item._id %>"><%= item.name %></a></p>
+              <img src="<%= item.avatar_url %>">
+              <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+                  </form>
+              </div>
+              <form method="post" action="/outfits">
+                <button class="btn btn-primary" id='send' type="submit">Add to outfit</button>
+            </form>
+            <% }) %>
+          </div>
+        </ul>
+        <a href="/items/new" class="btn btn-primary">New</a>
+        </main>
+      </div>
+    </div>
+  </section>
 
   <footer>
     <% include ../partials/footer %>
