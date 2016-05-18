@@ -37,9 +37,8 @@ router.get('/new', authenticate, function(req, res, next) {
 /// SHOW
 router.get('/:id', authenticate, function(req, res, next) {
   var outfit = currentUser.outfits.id(req.params.id);
-  var items = global.currentUser.items;
   if (!outfit) return next(makeError(res, 'Document not found', 404));
-  res.render('outfits/show', { outfit: outfit, items: items } );
+  res.render('outfits/show', { outfit: outfit } );
 });
 
 // CREATE
@@ -58,20 +57,27 @@ router.post('/', authenticate, function(req, res, next) {
 
 // EDIT
 router.get('/:id/edit', authenticate, function(req, res, next) {
-    var outfits = currentUser.outfits.id(req.params.id);
-    if(!outfit) return next(makeError(res, 'Document not found', 404));
-    res.render('outfits/edit', { outfit: outfit });
+  var outfit = currentUser.outfits.id(req.params.id);
+  if (!outfit) return next(makeError(res, 'Document not found', 404));
+
+  // TODO: remove items that are already in the outfit
+  var itemsToAdd = currentUser.items;
+  res.render('outfits/edit', { outfit: outfit, itemsToAdd: itemsToAdd });
 });
+
 
 // UPDATE
 router.put('/:id', authenticate, function(req, res, next) {
   var outfit = currentUser.outfits.id(req.params.id);
-  console.log('req.query:', req.query);
-  Item.findById(req.query.item)
-    .then(function(item){
-      console.log('item:', item);
+  var itemid = req.body.itemid;
+  console.log("this is the outfit "+ outfit + "this is the item "+ itemid);
+  user.findById(currentUser.id)
+    .then(function(outfit){
+      //once you find the item, then push it to the outfit using a find by id
+      //for outfit
+      console.log('outfit:', outfit);
       outfit.name = req.body.outfit;
-      item = req.body.prompt;
+      outfit.items.push(itemid);
     });
     outfit.save()
   //  if(!outfit) return next(makeError(res, 'Document not found', 404));

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body class="container-fluid">
+  <header>
+    <% include ../partials/header %>
+  </header>
+
+  <main>
+    <div>
+      <h3><b>Name: </b><%= outfit.name %></h3>
+      <p>Current items</p>
+      <ul>
+      <% outfit.items.forEach(function(item) { %>
+        <li><%= item.name %></li>
+      <% }) %>
+      </ul>
+
+      <p>Add items to oufit</p>
+      <% itemsToAdd.forEach(function(item) { %>
+          <form action="/outfits/<%= outfit._id %>?_method=PUT" method="post">
+          <img src="<%= item.avatar_url %>">
+          <span><%= item.name %></span>
+          <button class="btn btn-primary" id='send' type="submit">Add to outfit</button>
+          <input type="hidden" name="itemid" value ="<%= item._id %>">
+        </form>
+        <% }) %>
+    </div>
+
+    <a href="/outfits" class="btn btn-primary">Back</a>
+    <a href="/outfits<%= outfit._id %>/edit" class="btn btn-danger">Edit</a>
+
+  </main>
+
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+</body>
+</html>
