@@ -1,3 +1,6 @@
+//=================================================
+// GLOBAL
+//=================================================
 var express      = require('express');
 var path         = require('path');
 var favicon      = require('serve-favicon');
@@ -15,7 +18,9 @@ var AWS_SECRET_KEY  = process.env.AWS_SECRET_KEY;
 var S3_BUCKET     = process.env.S3_BUCKET;
 
 
-// Routes
+//=================================================
+// ROUTES
+//=================================================
 var routes = require('./routes/index');
 var users  = require('./routes/users');
 var outfitsRouter = require('./routes/outfits');
@@ -23,18 +28,25 @@ var itemsRouter = require('./routes/items');
 
 var app = express();
 
-// connect to database
+//=================================================
+// CONNECT TO DATABASE
+//=================================================
 var mongoUri = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/outfttr'
 
 mongoose.connect(mongoUri);
 
 
-// view engine setup
+//=================================================
+// VIEW ENGINE SETUP
+//=================================================
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+//=================================================
+//APP.USE SECTION
+//=================================================
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

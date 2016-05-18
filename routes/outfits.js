@@ -19,11 +19,31 @@ function authenticate(req, res, next) {
   }
 }
 
+function getItems(outfit) {
+  // convert itemIds from the items in the outfit into the full item objects
+  var items = [];
+  outfit.items.forEach(function(itemId) {
+    var item = currentUser.items.id(itemId);
+    items.push(item);
+  });
+  return items;
+}
+
+function getItemsToAdd(outfit) {
+  // Only show items that are not already in the outfit
+  var itemsToAdd = [];
+  currentUser.items.forEach(function(item) {
+    if (outfit.items.indexOf(item._id) === -1) {
+      itemsToAdd.push(item);
+    }
+  });
+  return itemsToAdd;
+}
+
 // INDEX
 router.get('/', authenticate, function(req, res, next) {
   var outfits = global.currentUser.outfits;
-  var items = global.currentUser.items;
-  res.render('outfits/index', { outfits: outfits, items: items });
+  res.render('outfits/index', { outfits: outfits });
 });
 
 //NEW
@@ -37,9 +57,8 @@ router.get('/new', authenticate, function(req, res, next) {
 /// SHOW
 router.get('/:id', authenticate, function(req, res, next) {
   var outfit = currentUser.outfits.id(req.params.id);
-  var items = global.currentUser.items;
   if (!outfit) return next(makeError(res, 'Document not found', 404));
-  res.render('outfits/show', { outfit: outfit, items: items } );
+  res.render('outfits/show', { outfit: outfit, items: getItems(outfit) } );
 });
 
 // CREATE
@@ -58,33 +77,40 @@ router.post('/', authenticate, function(req, res, next) {
 
 // EDIT
 router.get('/:id/edit', authenticate, function(req, res, next) {
-    var outfits = currentUser.outfits.id(req.params.id);
-    if(!outfit) return next(makeError(res, 'Document not found', 404));
-    res.render('outfits/edit', { outfit: outfit });
+  var outfit = currentUser.outfits.id(req.params.id);
+  if (!outfit) return next(makeError(res, 'Document not found', 404));
+  res.render('outfits/edit', { outfit: outfit,
+                               items: getItems(outfit),
+                               itemsToAdd: getItemsToAdd(outfit) });
 });
+
 
 // UPDATE
 router.put('/:id', authenticate, function(req, res, next) {
   var outfit = currentUser.outfits.id(req.params.id);
-  console.log('req.query:', req.query);
-  Item.findById(req.query.item)
-    .then(function(item){
-      console.log('item:', item);
-      outfit.name = req.body.outfit;
-      item = req.body.prompt;
-    });
-    outfit.save()
+  var item = currentUser.items.id(req.body.itemid);
+  console.log("this is the outfit", outfit);
+  console.log("this is the item", item);
+  outfit.items.push(item);
+  currentUser.save()
+  .then(function(saved) {
+     res.redirect('/outfits');
+  }, function(err) {
+      return next(err)
+  });
+});
+
   //  if(!outfit) return next(makeError(res, 'Document not found', 404));
    // else{
          //   outfit.name = req.body.outfit;
            // currentUser.outfit.items.push(item);
            // currentUser.save()
-            .then(function(saved){
-               res.redirect('/outfits');
-           }, function(err){
-               return next(err)
-            });
-  });
+  //           .then(function(saved){
+  //              res.redirect('/outfits');
+  //          }, function(err){
+  //              return next(err)
+  //           });
+  // });
 // });
 
 
