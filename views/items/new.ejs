@@ -83,19 +83,19 @@ function init_upload(){
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="/">Home</a>
+                <a class="navbar-brand page-scroll" href="/">HOME</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul list-style-type="none" class="nav navbar-nav navbar-right">
-                    <li><a href="/items">My Closet</a></li>
-                    <li><a href="/outfits">My Outfits</a></li>
+                    <li><a href="/items">MY CLOSET</a></li>
+                    <li><a href="/outfits">MY OUTFITS</a></li>
                     <% if (currentUser) { %>
                       <li><a href="/users/<%= currentUser.id %>"><%= currentUser.local.email %></a></li>
-                      <li><a href="/logout">Log Out</a></li>
+                      <li><a href="/logout">LOG OUT</a></li>
                     <% } else { %>
-                      <li><a href="/login">Log In</a></li>
+                      <li><a href="/login">LOG IN</a></li>
                     <% } %>
                 </ul>
             </div>

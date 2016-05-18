@@ -1,15 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <% include ../partials/head %>
 </head>
 
-<body class="container-fluid">
-  <header>
-    <% include ../partials/header %>
-  </header>
+<body style="background-color:#f05f40;" id="page-top">
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="/">HOME</a>
+            </div>
 
-  <main>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="page-scroll" href="/items">MY CLOSET</a></li>
+                    <li><a class="page-scroll" href="/outfits">MY OUTFITS</a></li>
+                    <% if (currentUser) { %>
+                      <li><a class= "page-scroll" href="/users/<%= currentUser.id %>"><%= currentUser.local.email %></a></li>
+                      <li><a href="/logout">LOG OUT</a></li>
+                    <% } else { %>
+                        <li><a class="page-scroll" href="/login">LOG IN</a></li>
+                    <% } %>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
     <div>
       <h3><b>Name: </b><%= outfit.name %></h3>
       <ul>
@@ -18,10 +45,9 @@
       <% }) %>
       </ul>
 
-    <a href="/outfits" class="btn btn-primary">Back</a>
+    <a href="/outfits" class="btn btn-default">Back</a>
     <a href="/outfits/<%= outfit._id %>/edit" class="btn btn-danger">Edit</a>
-
-  </main>
+    </div>
 
   <footer>
     <% include ../partials/footer %>

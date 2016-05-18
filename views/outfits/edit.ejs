@@ -4,12 +4,37 @@
   <% include ../partials/head %>
 </head>
 
-<body class="container-fluid">
-  <header>
-    <% include ../partials/header %>
-  </header>
+<body style="background-color:#f05f40;" class="container-fluid">
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="/">HOME</a>
+            </div>
 
-  <main>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="page-scroll" href="/items">MY CLOSET</a></li>
+                    <li><a class="page-scroll" href="/outfits">MY OUTFITS</a></li>
+                    <% if (currentUser) { %>
+                      <li><a class= "page-scroll" href="/users/<%= currentUser.id %>"><%= currentUser.local.email %></a></li>
+                      <li><a href="/logout">LOG OUT</a></li>
+                    <% } else { %>
+                        <li><a class="page-scroll" href="/login">LOG IN</a></li>
+                    <% } %>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
     <div>
       <h3><b>Name: </b><%= outfit.name %></h3>
       <p>Current items</p>
@@ -24,15 +49,13 @@
           <form action="/outfits/<%= outfit._id %>?_method=PUT" method="post">
           <img src="<%= item.avatar_url %>">
           <span><%= item.name %></span>
-          <button class="btn btn-primary" id='send' type="submit">Add to outfit</button>
+          <button class="btn btn-default" id='send' type="submit">Add to outfit</button>
           <input type="hidden" name="itemid" value ="<%= item._id %>">
         </form>
         <% }) %>
     </div>
 
-    <a href="/outfits" class="btn btn-primary">Back</a>
-
-  </main>
+    <a href="/outfits" class="btn btn-default">Back</a>
 
   <footer>
     <% include ../partials/footer %>
