@@ -26,6 +26,7 @@ router.get('/', authenticate, function(req, res, next) {
   res.render('outfits/index', { outfits: outfits, items: items });
 });
 
+//NEW
 router.get('/new', authenticate, function(req, res, next) {
     var outfit = {
       name: ''
@@ -46,8 +47,6 @@ router.post('/', authenticate, function(req, res, next) {
     var outfit = {
       name: req.body.name
     };
-    var items = global.currentUser.items;
-    var item = currentUser.items.id(req.params.id);
     currentUser.outfits.push(outfit);
     currentUser.save()
         .then(function() {

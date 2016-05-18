@@ -25,4 +25,5 @@ router.get('/:id', authenticate, function(req, res, next) {
     res.render('users/show', { user: user });
 });
 
+
 module.exports = router;
