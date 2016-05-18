@@ -4171,6 +4171,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   min-height: 50px;
   margin-bottom: 20px;
   border: 1px solid transparent;
+  font-family: 'Open Sans','Helvetica Neue', Arial,sans-serif;
 }
 @media (min-width: 768px) {
   .navbar {
@@ -4280,6 +4281,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding: 15px 15px;
   font-size: 18px;
   line-height: 20px;
+  font-family: 'Open Sans','Helvetica Neue', Arial,sans-serif;
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
