@@ -22,13 +22,13 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a class="page-scroll" href="/items">MY CLOSET</a></li>
-                    <li><a class="page-scroll" href="/outfits">MY OUTFITS</a></li>
+                    <li><a class="page-scroll" href="/items">My Closet</a></li>
+                    <li><a class="page-scroll" href="/outfits">My Outfits</a></li>
                     <% if (currentUser) { %>
                       <li><a class= "page-scroll" href="/users/<%= currentUser.id %>"><%= currentUser.local.email %></a></li>
-                      <li><a href="/logout">LOG OUT</a></li>
+                      <li><a href="/logout">Log Out</a></li>
                     <% } else { %>
-                        <li><a class="page-scroll" href="/login">LOG IN</a></li>
+                        <li><a class="page-scroll" href="/login">Log In</a></li>
                     <% } %>
                 </ul>
             </div>
@@ -41,7 +41,7 @@
       <h3><b>Name: </b><%= outfit.name %></h3>
       <ul>
       <% items.forEach(function(item) { %>
-        <img src="<%= item.avatar_url %>">
+        <img src="<%= item.avatar_url %>" width="225px">
       <% }) %>
       </ul>
 
