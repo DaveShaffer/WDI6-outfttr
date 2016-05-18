@@ -1,16 +1,19 @@
 # outfttr
 ### PROJECT 3
-#### General Assembly 
-##### Web Development Immersive 
-##### Cohort 6 
-# 
+#### General Assembly
+##### Web Development Immersive
+##### Cohort 6
+##### Developers: Brad Hughes, Dave Shaffer, Gatina Foy and Sydney Smith
+#
 ###### Atlanta, GA, USA
-# 
-# 
+#
+#
 
-For project three, we formed teams to draft, design and create a full-stack server-side JavaScript API (Application Program Interface) using MongoDB and Express.js.  We practiced Git flow (project version control) on GitHub and communicated on Trello and Slack to manage team collaboration.  
+For project three, we formed teams to draft, design and create a full-stack server-side JavaScript API (Application Program Interface) using Node.js, MongoDB and Express.js.  We practiced Git flow (project version control) on GitHub and communicated on Trello and Slack to manage team collaboration.
 
-## TECHNOLOGIES
+Deployed App: <https://outfttr.herokuapp.com/>
+
+## TECHNOLOGIES AND TOOLS
  - MongoDB relational NoSQL database
  - Mongoosejs mongoDB object modeling for node.js
  - Three related models: User, Items of clothing and an Outfit
@@ -23,7 +26,7 @@ For project three, we formed teams to draft, design and create a full-stack serv
  - clean and well-formatted CSS (Cascading Style Sheets)
  - Heroku cloud app hosting
  - GitHub software repository
- - Amazon S3 (Simple Storage Service) cloud storage
+ - AWS-SDK module with Amazon S3 (Simple Storage Service) cloud storage
  - Authentication and Authorization stategies with Passportjs middleware
  - Trello project manager
  - Slack messaging app
@@ -31,9 +34,9 @@ For project three, we formed teams to draft, design and create a full-stack serv
  - IP-API Geolocation API
 
 ## GENERAL APPROACH
-When we first met, we presented project proposals and then voted on which we would like to do.  Next we brainstormed some ideas on the white board then presented our idea to the instructors.  After they gave us some notes, we sketched out some plans on Trello.  Over the weekend we started individual tasks: a new git repo was created with a basic express framework and models, the logo sketch was submitted to an artist, image hosting was setup on S3 and security coding with Passport was begun.  On Monday we began creating routes and views, passport and bootstrap integration began, wireframes were sketched and we starting seeing what the OpenWeatherMap API could do. 
+When we first met, we presented project proposals and voted on the best.  Next, we brainstormed some our models for our project on the white board then pitched our idea to our instructors.  After receiving their feedback, we sketched out our plans on Trello.  Over the weekend we started individual tasks: a new git repo was created with a basic express framework and models, the logo sketch was submitted to an artist, image hosting was setup on S3 and began security coding with Passport.  On Monday we began creating routes and views and started bootstrap integration, sketched wireframes, researched the OpenWeatherMap API and finished passport security.
 
-## INSTALLTION INSTRUCTIONS
+## INSTALLATION INSTRUCTIONS
 New users create an account and build a database (closet) of pant, shirts, dresses and shoes.  Then they can check the weather forecast, scroll through their closet and create an outfit.  When each item is displayed, there will be a checkbox letting the user know if it is clean and when was the last time the item was worn.
 
 ## USER STORIES
