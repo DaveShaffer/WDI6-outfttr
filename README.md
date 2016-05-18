@@ -44,13 +44,13 @@ New users create an account and build a database (closet) of pant, shirts, dress
 
 ## SITE MAP
 
-![Site Map]('https://github.com/DaveShaffer/WDI6-outFttr/blob/master/images/SiteMap.png')
+![Site Map](https://github.com/DaveShaffer/WDI6-outFttr/blob/master/images/SiteMap.png)
 
 ## WIREFRAMES
 
-![Login Page]('https://github.com/DaveShaffer/WDI6-outFttr/blob/master/images/LoginPage.png')
+![Login Page](https://github.com/DaveShaffer/WDI6-outFttr/blob/master/images/LoginPage.png)
 
-![Create an Outfit]('https://github.com/DaveShaffer/WDI6-outFttr/blob/master/images/CreateOutfit.png')
+![Create an Outfit](https://github.com/DaveShaffer/WDI6-outFttr/blob/master/images/CreateOutfit.png)
 
 ## MAJOR HURDLES
  - routing
