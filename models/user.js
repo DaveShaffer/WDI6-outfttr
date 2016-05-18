@@ -10,7 +10,7 @@ var Outfit = require('./outfit');
 var UserSchema = new Schema( {
   name: String,
   local : {
-    email: {
+      email: {
       type: String,
       match: /.+\@.+\..+/,
       unique: true,

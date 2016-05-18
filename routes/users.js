@@ -20,9 +20,8 @@ router.get('/', authenticate, function(req, res, next) {
 
 // SHOW
 router.get('/:id', authenticate, function(req, res, next) {
-    var user = currentUser._id;
-    if(!user) return next(makeError(res, 'Document not found', 404));
-    res.render('users/show', { user: user });
+    if(!currentUser) return next(makeError(res, 'Document not found', 404));
+    res.render('users/show', { user: currentUser });
 });
 
 module.exports = router;
