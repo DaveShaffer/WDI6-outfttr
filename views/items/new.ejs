@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Outfttr</title>
+    <title>Outfttr | Add Item</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -100,7 +100,8 @@ function init_upload(){
 </head>
 
 <body style="background-color:#f05f40;" id="page-top">
-
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -116,14 +117,14 @@ function init_upload(){
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a class="page-scroll" href="/items">My Closet</a></li>
-                    <li><a class="page-scroll" href="/outfits">My Outfits</a></li>
+                <ul list-style-type="none" class="nav navbar-nav navbar-right">
+                    <li><a href="/items">My Closet</a></li>
+                    <li><a href="/outfits">My Outfits</a></li>
                     <% if (currentUser) { %>
-                      <li><a class= "page-scroll" href="/users/<%= currentUser.id %>"><%= currentUser.local.email %></a></li>
-                      <li><a href="/logout">Logout</a></li>
+                      <li><a href="/users/<%= currentUser.id %>"><%= currentUser.local.email %></a></li>
+                      <li><a href="/logout">Log Out</a></li>
                     <% } else { %>
-                        <li><a class="page-scroll" href="/login">Log In</a></li>
+                      <li><a href="/login">Log In</a></li>
                     <% } %>
                 </ul>
             </div>
