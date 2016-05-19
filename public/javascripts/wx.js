@@ -1,4 +1,4 @@
-$(document).ready(function(){
+
     // convert temperatures from degrees Kelvin to degress Fahrenheit
     function tempConv(x) {
       return Math.round((x - 273.15) * 1.8 + 32);
@@ -37,4 +37,4 @@ window.getWeather = function() {
       }); // end weather JSON
     }); // end location JSON
   }
-});
+
