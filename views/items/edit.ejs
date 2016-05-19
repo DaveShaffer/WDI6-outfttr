@@ -100,12 +100,15 @@
         <option value="accessory">Accessory</option>
       </select>
     </div>
-    <div class="form-group">
     <label for="isClean">Clean?</label>
-    <input type="checkbox"
-          name="isClean"
-          <%= item.isClean ? 'checked' : '' %> >
-    </div>
+    <a href="/items/<%= item._id %>/toggle">
+    <% if (item.isClean) { %>
+    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+    <% } else { %>
+    <span class="glyphicon glyphicon-unchecked" aria-hidden="true"></span>
+    <% } %>
+    </a>
+    <div></div>
     <a href="/items/<%= item._id %>" class="btn btn-default">Back</a>
     <button type="submit" class="btn btn-success">Save</button>
   </form>
