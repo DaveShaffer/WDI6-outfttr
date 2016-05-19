@@ -45,8 +45,9 @@
       <% }) %>
       </ul>
 
-    <a href="/outfits" class="btn btn-default">Back</a>
+    <a href="/outfits" class="btn btn-default">Back</a> <br>
     <a href="/outfits/<%= outfit._id %>/edit" class="btn btn-danger">Edit</a>
+    <form method="POST" action="/outfits/<%= outfits._id %>?_method=DELETE"><button type="submit" class="btn btn-default">Delete</button>
     </div>
 
   <footer>
