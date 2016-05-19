@@ -1,5 +1,5 @@
-# outfttr
 ![Logo](https://github.com/DaveShaffer/WDI6-outFttr/blob/master/images/Logo.jpeg)
+# outfttr
 ### PROJECT 3
 #### General Assembly
 ##### Web Development Immersive
