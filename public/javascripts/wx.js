@@ -6,15 +6,13 @@
     // get user's location from ip address
 window.getWeather = function() {
 
-    alert('Its working');
 
     var getIP = 'http://ip-api.com/json/';
     $.getJSON(getIP).done(function(location) {
-      // var wxKey = '97096dd9f52a61051e6abc4495f2d176';
-      var wxKey = process.env.KEY;
+      var wxKey = '97096dd9f52a61051e6abc4495f2d176';
+      // var wxKey = process.env.KEY;
       var wxUrl = 'http://api.openweathermap.org/data/2.5/forecast?lat=' + location.lat + '&lon=' + location.lon + '&appid=' + wxKey;
       // get uset's weather forecast
-      $('#currentLocation').text('location: ' + location.city);
       $.getJSON(wxUrl, function(data) {
         // show current conditions
         $('#currentTemp').text('Current conditions in  ' + location.city + ', ' + location.region + ': ' + Math.round(tempConv(data.list[0].main.temp)) + 'F and ' + data.list[0].weather[0].description);
