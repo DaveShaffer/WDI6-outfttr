@@ -85,6 +85,7 @@
               <span class="glyphicon glyphicon-unchecked" aria-hidden="true"></span>
             <% } %>
       </p>
+      <p><b>Last Worn: </b><%= item.getUpdatedAt() %></p>
     </div>
       <a href="/items" class="btn btn-default">Back</a> <br>
       <a href="/items/<%= item._id %>/edit" class="btn btn-default">Edit</a>
