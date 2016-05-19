@@ -112,7 +112,7 @@
     <label for="isClean">Clean?</label>
     <input type="checkbox"
           name="isClean"
-          <%= item.completed ? 'checked' : '' %> >
+          <%= item.isClean ? 'checked' : '' %> >
     </div>
     <a href="/items/<%= item._id %>" class="btn btn-default">Back</a>
     <button type="submit" class="btn btn-success">Save</button>
