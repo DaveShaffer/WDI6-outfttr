@@ -1,4 +1,4 @@
-
+$(document).ready(function(){
     // convert temperatures from degrees Kelvin to degress Fahrenheit
     function tempConv(x) {
       return Math.round((x - 273.15) * 1.8 + 32);
@@ -6,10 +6,12 @@
     // get user's location from ip address
 window.getWeather = function() {
 
+    alert('Its working');
+
     var getIP = 'http://ip-api.com/json/';
     $.getJSON(getIP).done(function(location) {
-      var wxKey = '97096dd9f52a61051e6abc4495f2d176';
-      // var wxKey = process.env.KEY;
+      // var wxKey = '97096dd9f52a61051e6abc4495f2d176';
+      var wxKey = process.env.KEY;
       var wxUrl = 'http://api.openweathermap.org/data/2.5/forecast?lat=' + location.lat + '&lon=' + location.lon + '&appid=' + wxKey;
       // get uset's weather forecast
       $('#currentLocation').text('location: ' + location.city);
@@ -35,3 +37,4 @@ window.getWeather = function() {
       }); // end weather JSON
     }); // end location JSON
   }
+});
