@@ -12,14 +12,12 @@ div.wx {
   color: #fff;
 }
 
-.main {
-  clear: fixed;
-}
+
 
 .itembg {
   background-color: rgba(150,150,150,0.5);
   margin: 10px;
-    text-align: center;
+  text-align: center;
   padding: 20px;
   border: 1px solid #f05f40;
 }
@@ -31,13 +29,12 @@ div.wx {
 
 .weather {
   background-color: rgba(150,150,150,0.5);
-  margin: 10px;
+  margin-top: 30px;
   text-align: right;
   border: 1px solid #f05f40;
   width: 430px;
   padding: 20px;
-  float: right;
-  clear: fixed;
+  margin-left: 60%;
 }
 
 
