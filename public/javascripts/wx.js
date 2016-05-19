@@ -10,7 +10,7 @@ window.getWeather = function() {
     var getIP = 'http://ip-api.com/json/';
     $.getJSON(getIP).done(function(location) {
       var wxKey = '97096dd9f52a61051e6abc4495f2d176';
-      // var wxKey = process.env.KEY;
+      // wxKey = process.env.WX_KEY;
       var wxUrl = 'http://api.openweathermap.org/data/2.5/forecast?lat=' + location.lat + '&lon=' + location.lon + '&appid=' + wxKey;
       // get uset's weather forecast
       $.getJSON(wxUrl, function(data) {
@@ -35,6 +35,7 @@ window.getWeather = function() {
       }); // end weather JSON
     }); // end location JSON
   }
+// });
 
 
 

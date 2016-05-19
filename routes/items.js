@@ -109,17 +109,17 @@ router.delete('/:id', authenticate, function(req, res, next) {
 
 // TOGGLE completed
 router.get('/:id/toggle', authenticate, function(req, res, next) {
-    var item = currentUser.items.findById(req.params.id);
+    var item = currentUser.items.id(req.params.id);
     if (!item) return next(makeError(res, 'Document not found', 404));
     else {
         item.isClean = !item.isClean;
-        item.save()
+        currentUser.save()
             .then(function(saved) {
                 res.redirect('/items');
             }, function(err) {
                 return next(err);
             });
-        }ƒ
+        }
 });
 
 module.exports = router;
