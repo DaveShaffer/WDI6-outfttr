@@ -10,6 +10,7 @@ var Outfit = require('./outfit');
 var UserSchema = new Schema( {
   name: String,
   // Gender: String,
+  user_url: String,
   local : {
       email: {
       type: String,
