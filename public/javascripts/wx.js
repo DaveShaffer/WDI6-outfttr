@@ -4,12 +4,15 @@
       return Math.round((x - 273.15) * 1.8 + 32);
     } // end fnc tempConv
     // get user's location from ip address
+window.getWeather = function() {
+
     var getIP = 'http://ip-api.com/json/';
     $.getJSON(getIP).done(function(location) {
       // var wxKey = '97096dd9f52a61051e6abc4495f2d176';
       var wxKey = process.env.WX_KEY;
       var wxUrl = 'http://api.openweathermap.org/data/2.5/forecast?lat=' + location.lat + '&lon=' + location.lon + '&appid=' + wxKey;
       // get uset's weather forecast
+      $('#currentLocation').text('location: ' + location.city);
       $.getJSON(wxUrl, function(data) {
         // show current conditions
         $('#currentTemp').text('Current conditions in  ' + location.city + ', ' + location.region + ': ' + Math.round(tempConv(data.list[0].main.temp)) + 'F and ' + data.list[0].weather[0].description);
@@ -31,3 +34,4 @@
         $('#avgWind').text('Avg Wind Speed: ' + avgWind + ' mph');
       }); // end weather JSON
     }); // end location JSON
+  }
