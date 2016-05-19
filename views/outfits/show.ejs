@@ -35,7 +35,7 @@
 </head>
 
 <body style="background-image:url(http://images.containerstore.com/medialibrary/images/tcsclosets/slideshow/Image01-TCSClosets-960.jpg); background-size:cover;" id="page-top">
-<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+  <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -67,7 +67,7 @@
     </nav>
 
     <div>
-      <h3><b>Name: </b><%= outfit.name %></h3>
+      <h3 style="color:#f05f40; text-align:center"><b>Name: </b><%= outfit.name %></h3>
       <ul>
       <% items.forEach(function(item) { %>
         <img src="<%= item.avatar_url %>" width="225px">
