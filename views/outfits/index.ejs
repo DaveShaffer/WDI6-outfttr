@@ -14,6 +14,7 @@
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
 
     <!-- Custom Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -69,7 +70,7 @@
       <h1 style="color:#f05f40; text-align:center";>My Outfits</h1><hr>
         <% outfits.forEach(function(outfit) { %>
         <form method="POST" action="/outfits/<%= outfit._id %>?_method=DELETE">
-          <div class="col-sm-6 col-md-3 set-height">
+          <div class="col-sm-6 col-md-3 set-height itembg">
           <h3><a href="/outfits/<%= outfit._id %>"><%= outfit.name %></a></h3>
           <button type="submit" class="btn btn-xs btn-danger">Delete</button>
           </div>

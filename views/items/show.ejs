@@ -14,6 +14,7 @@
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
 
     <!-- Custom Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -69,26 +70,27 @@
 
     <div class="container">
     <div class="header-content-inner">
-      <h1 align="center">Show Clothing Item:</h1><hr>
+      <h1 style="color: white;" align="center">Your Clothing</h1><hr>
 
-    <div>
-      <h3 style="color:#f05f40; text-align:center"><b>Name: </b><%= item.name %></h3>
+    <div class="itembg show">
+      <h3 style="color:#f05f40; text-align:center"><%= item.name %></h3>
       <img src="<%= item.avatar_url %>" width="225px">
-      <p><b>Type of Clothing: </b><%= item.type %></p>
-      <p><b>Color: </b><%= item.color %></p>
-      <p><b>Material: </b><%= item.material %></p>
-      <p><b>Clean: </b>
+      <p style="color:#f05f40"><b>Type of Clothing: </b><%= item.type %></p>
+      <p style="color:#f05f40"><b>Color: </b><%= item.color %></p>
+      <p style="color:#f05f40"><b>Material: </b><%= item.material %></p>
+      <p style="color:#f05f40"><b>Clean: </b>
         <% if (item.isClean) { %>
           <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
             <% } else { %>
               <span class="glyphicon glyphicon-unchecked" aria-hidden="true"></span>
             <% } %>
       </p>
-      <p><b>Last Worn: </b><%= item.getUpdatedAt() %></p>
-    </div>
-      <a href="/items" class="btn btn-default">Back</a> <br>
+      <p style="color:#f05f40"><b>Last Worn: </b><%= item.getUpdatedAt() %></p>
+      <a href="/items" class="btn btn-default">Back</a>
       <a href="/items/<%= item._id %>/edit" class="btn btn-default">Edit</a>
-      <form method="POST" action="/items/<%= item._id %>?_method=DELETE"><button type="submit" class="btn btn-default">Delete</button>
+      <form method="POST" action="/items/<%= item._id %>?_method=DELETE"><button type="submit" class="btn btn-default btn-danger">Delete</button>
+    </div>
+
     </div>
     </div>
 
