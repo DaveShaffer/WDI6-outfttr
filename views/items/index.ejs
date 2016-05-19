@@ -106,21 +106,16 @@
         <div class="wx" id="minTemp"></div>
         <div class="wx" id="avgWind"></div>
         </div>
+        <div class="main">
         <h1 style="color:#f05f40; text-align:center">My Closet</h1>
         <hr>
-
-        <main>
         <ul>
           <div class="row" >
             <% items.forEach(function(item) { %>
             <form method="POST" action="/items/<%= item._id %>?_method=DELETE">
-<<<<<<< HEAD
-              <div class="col-sm-6 col-md-3 set-height" style="background-color: rgba(150,150,150,0.5); margin: 10px; border: 1px solid #f05f40; text-align: center;">
-              <p><strong>Name:</strong> <a href="/items/<%= item._id %>"><%= item.name %></a></p>
-=======
               <div class="col-sm-6 col-md-3 set-height itembg">
               <a href="/items/<%= item._id %>"><%= item.name %></a></p>
->>>>>>> PassportSecurity
+
               <img src="<%= item.avatar_url %>" width="225px">
               <button type="submit" class="btn btn-xs btn-danger">Delete</button>
                </div>
@@ -134,6 +129,7 @@
         </center>
         </main>
       </div>
+    </div>
     </div>
 
   <footer>

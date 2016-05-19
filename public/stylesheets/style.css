@@ -12,12 +12,16 @@ div.wx {
   color: #fff;
 }
 
+.main {
+  clear: fixed;
+}
+
 .itembg {
-background-color: rgba(150,150,150,0.5);
-margin: 10px;
-text-align: center;
-padding: 20px;
-border: 1px solid #f05f40;
+  background-color: rgba(150,150,150,0.5);
+  margin: 10px;
+    text-align: center;
+  padding: 20px;
+  border: 1px solid #f05f40;
 }
 
 .show {
@@ -32,6 +36,8 @@ border: 1px solid #f05f40;
   border: 1px solid #f05f40;
   width: 430px;
   padding: 20px;
+  float: right;
+  clear: fixed;
 }
 
 
