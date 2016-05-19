@@ -10,15 +10,14 @@ window.getWeather = function() {
 
     var getIP = 'http://ip-api.com/json/';
     $.getJSON(getIP).done(function(location) {
+      alert(location.lon);
       var wxKey = '97096dd9f52a61051e6abc4495f2d176';
       // var wxKey = process.env.KEY;
       var wxUrl = 'http://api.openweathermap.org/data/2.5/forecast?lat=' + location.lat + '&lon=' + location.lon + '&appid=' + wxKey;
-      alert(wxKey)
-      alert(location.lat)
-      alert(location.lon)
       // get uset's weather forecast
       $('#currentLocation').text('location: ' + location.city);
       $.getJSON(wxUrl, function(data) {
+        alert(data.list[1].weather[0].description);
         // show current conditions
         $('#currentTemp').text('Current conditions in  ' + location.city + ', ' + location.region + ': ' + Math.round(tempConv(data.list[0].main.temp)) + 'F and ' + data.list[0].weather[0].description);
         // show conditions for next two forecast periods
