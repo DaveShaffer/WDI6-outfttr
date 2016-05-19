@@ -1,8 +1,13 @@
 body {
   padding: 50px;
   font-family: 'Open Sans', 'Helvetica Neue', Arial,sans-serif;
+  color: #eee;
 }
 
 a {
   color: #fff;
+}
+
+div.wx {
+  color: #eee;
 }
