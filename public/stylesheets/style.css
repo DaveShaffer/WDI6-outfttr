@@ -20,6 +20,8 @@ div.wx {
   text-align: center;
   padding: 20px;
   border: 1px solid #f05f40;
+  width: 400px;
+  height: 400px;
 }
 
 .show {
