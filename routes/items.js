@@ -112,7 +112,7 @@ router.get('/:id/toggle', authenticate, function(req, res, next) {
     var item = currentUser.items.findById(req.params.id);
     if (!item) return next(makeError(res, 'Document not found', 404));
     else {
-        item.lastWorn = !item.lastWorn;
+        item.isClean = !item.isClean;
         item.save()
             .then(function(saved) {
                 res.redirect('/items');
