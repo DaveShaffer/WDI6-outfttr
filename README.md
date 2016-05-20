@@ -2,8 +2,7 @@
 # outfttr
 ### PROJECT 3
 #### General Assembly
-##### Web Development Immersive
-##### Cohort 6
+##### Web Development Immersive, Cohort 6
 ##### Developers: Brad Hughes, Dave Shaffer, Gatina Foy and Sydney Smith
 #
 ###### Atlanta, GA, USA
@@ -12,7 +11,8 @@
 
 For project three, we formed teams to draft, design and create a full-stack server-side JavaScript API (Application Program Interface) using Node.js, MongoDB and Express.js.  We practiced Git flow (project version control) on GitHub and communicated on Trello and Slack to manage team collaboration.
 
-Deployed App: <https://outfttr.herokuapp.com/>
+Deployed app: [https://outfttr.herokuapp.com/](https://outfttr.herokuapp.com/)<br>
+Trello board: [https://trello.com/b/OJTvLgzb/project-3](https://trello.com/b/OJTvLgzb/project-3)
 
 ## TECHNOLOGIES AND TOOLS
  - MongoDB relational NoSQL database
@@ -49,6 +49,10 @@ New users create an account and build a database (closet) of pant, shirts, dress
 
 ![Site Map](https://github.com/DaveShaffer/WDI6-outFttr/blob/master/images/SiteMap.png)
 
+## Entity Relationship Diagram
+
+![ERD](https://github.com/DaveShaffer/WDI6-outFttr/blob/master/images/ERD.png)
+
 ## WIREFRAMES
 
 ![Signup Page](https://github.com/DaveShaffer/WDI6-outFttr/blob/master/images/SignupPage.png)
@@ -73,3 +77,5 @@ New users create an account and build a database (closet) of pant, shirts, dress
 ## FUTURE VISION
  - Make the app more mobile-friendly and responsive
  - Fixed "last worn" feature to only register an item was worn when clean is unclicked
+ - The ability to share outfits between users.
+ - API of nearest mall or stores.
