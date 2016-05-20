@@ -21,9 +21,7 @@ div.wx {
 .formbg {
   background-color: rgba(150,150,150,0.5);
   margin: 10px;
-  text-align: center;
   padding: 20px;
-
   width: auto;
   height: auto;
 }
@@ -33,7 +31,7 @@ div.wx {
   margin: 10px;
   text-align: center;
   padding: 20px;
-
+  border: 1px solid #f05f40;
   width: auto;
   height: auto;
 }
