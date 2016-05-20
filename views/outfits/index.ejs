@@ -67,6 +67,10 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
+    <div class="container">
+      <div class="header-content-inner">
+      <ul>
+      <div class="row">
       <h1 style="color:#f05f40; text-align:center";>My Outfits</h1><hr>
         <% outfits.forEach(function(outfit) { %>
         <form method="POST" action="/outfits/<%= outfit._id %>?_method=DELETE">
@@ -77,10 +81,13 @@
         </form>
 
         <% }) %>
-        <a href="/outfits/new" class="btn btn-default">New</a>
-      </div>
-    </div>
-    </div>
+        </div>
+        </ul>
+        <center>
+        <a href="/outfits/new" class="btn btn-default">Create New Outfit</a>
+        </center>
+        </div>
+        </div>
 
 
 

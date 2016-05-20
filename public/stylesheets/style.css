@@ -4,6 +4,13 @@ body {
   color: #f05f40;
 }
 
+.item-header {
+  text-align: center;
+  color: #f05f40;
+}
+
+
+
 a {
   color: #f05f40;
 }
@@ -38,7 +45,7 @@ div.item-row {
   text-align: right;
   border: 1px solid #f05f40;
   width: 430px;
-  padding: 20px;
+  padding: 10px;
   margin-left: 60%;
 }
 
