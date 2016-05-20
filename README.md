@@ -45,7 +45,7 @@ New users create an account and build a database (closet) of pant, shirts, dress
 
 ## SITE MAP
 
-![Site Map](https://github.com/DaveShaffer/WDI6-outFttr/blob/master/images/SiteMap.png)
+![Site Map](https://github.com/DaveShaffer/WDI6-outFttr/blob/master/images/outFttr.png)
 
 ## WIREFRAMES
 
