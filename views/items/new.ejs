@@ -76,13 +76,7 @@
               <label for="avatar_url">Picture</label>
               <input type="file" id="file_input"/>
               <p id="status">Please select a file</p>
-              <img style="border:1px solid gray;width:225px;"  id="preview" src=
-                        <% if ( item.avatar_url == null ) { %>
-                            "/img/empty-closet.png"
-                        <% } else { %>
-                           "<%= item.avatar_url %>"
-              <% } %>
-          />
+              <img style="border:1px solid gray;width:225px;"  id="preview" src="">
               <input type="hidden" id="avatar_url" name="avatar_url" value="../images/default.png">
             </div>
             <div class="form-group">
