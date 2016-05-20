@@ -77,6 +77,13 @@
       <p>Add items to oufit</p>
       <% itemsToAdd.forEach(function(item) { %>
           <form action="/outfits/<%= outfit._id %>?_method=PUT" method="post">
+<<<<<<< HEAD
+          <img src="<%= item.avatar_url %>" width="225px">
+          <button class="btn btn-default" id='send' type="submit">Add to outfit</button>
+          <input type="hidden" name="itemid" value ="<%= item._id %>">
+        </form>
+        <% }) %>
+=======
             <img src="<%= item.avatar_url %>" width="225px">
             <span><%= item.name %></span>
             <button class="btn btn-default" id='send' type="submit">Add to outfit</button>
@@ -84,6 +91,7 @@
           </form>
       <% }) %>
         <a href="/outfits" class="btn btn-default">Back</a>
+>>>>>>> 659c98e6b1b9f69be115c41fdc6a698215471b5e
     </div>
 
 
