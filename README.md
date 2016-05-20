@@ -55,6 +55,7 @@ New users create an account and build a database (closet) of pants, shirts, dres
 
 ![ERD](https://github.com/DaveShaffer/WDI6-outFttr/blob/master/images/ERD.png)
 
+
 ## WIREFRAMES
 
 ![Signup Page](https://github.com/DaveShaffer/WDI6-outFttr/blob/master/images/SignupPage.png)
@@ -78,7 +79,7 @@ New users create an account and build a database (closet) of pants, shirts, dres
 
 ## FUTURE VISION
  - Make the app more mobile-friendly and responsive
- - Fixed "last worn" feature to only register an item was worn when clean is unclicked
- - The ability to share outfits between users.
- - API of nearest mall or stores.
+ - Add a "hamper" model so you can see which items are dirty
+ - The ability to share outfits between users
+ - API of nearest mall or stores
  - Display generic Item placeholders until the first actual Item is added to the closet
