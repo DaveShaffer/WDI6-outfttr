@@ -34,7 +34,7 @@
 
   <% include ../partials/head %>
   <script type="text/javascript" src='https://code.jquery.com/jquery-2.2.0.min.js'></script>
-  <script type="text/javascript" src='../javascripts/wx.js'></script></head>
+  <script type="text/javascript" src='../javascripts/wx.js'></script>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -64,6 +64,8 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+</head>
 
 <body style="background-image:url(http://images.containerstore.com/medialibrary/images/tcsclosets/slideshow/Image01-TCSClosets-960.jpg); background-size:cover;" id="page-top">
 
@@ -113,7 +115,7 @@
         </div>
 
         <ul>
-          <div class="item-row" >
+          <div class="row" >
             <% items.forEach(function(item) { %>
             <form method="POST" action="/items/<%= item._id %>?_method=DELETE">
               <div class="col-sm-6 col-md-3 set-height itembg">
