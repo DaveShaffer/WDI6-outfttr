@@ -49,6 +49,10 @@ New users create an account and build a database (closet) of pant, shirts, dress
 
 ![Site Map](https://github.com/DaveShaffer/WDI6-outFttr/blob/master/images/SiteMap.png)
 
+## Entity Relationship Diagram
+
+![ERD](https://github.com/DaveShaffer/WDI6-outFttr/blob/master/images/ERD.png)
+
 ## WIREFRAMES
 
 ![Signup Page](https://github.com/DaveShaffer/WDI6-outFttr/blob/master/images/SignupPage.png)
