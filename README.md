@@ -79,3 +79,4 @@ New users create an account and build a database (closet) of pant, shirts, dress
  - Fixed "last worn" feature to only register an item was worn when clean is unclicked
  - The ability to share outfits between users.
  - API of nearest mall or stores.
+ - Display generic Item placeholders until the first actual Item is added to the closet
