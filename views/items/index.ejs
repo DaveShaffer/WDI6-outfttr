@@ -105,13 +105,13 @@
         <div class="wx" id="forecast1"></div>
         <div class="wx" id="minTemp"></div>
         <div class="wx" id="avgWind"></div>
-        </div>
+      </div>
         <div class="main">
-        <h1 style="color:#f05f40; text-align:center">My Closet</h1>
-        <hr>
+            <h1 style="color:#f05f40; text-align:center">My Closet</h1>
+            <hr>
         </div>
         <ul>
-          <div class="row" >
+          <div class="item-row" >
             <% items.forEach(function(item) { %>
             <form method="POST" action="/items/<%= item._id %>?_method=DELETE">
               <div class="col-sm-6 col-md-3 set-height itembg">

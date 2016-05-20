@@ -12,7 +12,10 @@ div.wx {
   color: #fff;
 }
 
-
+div.item-row {
+  max-height: 100px;
+  max-width: 100px;
+}
 
 .itembg {
   background-color: rgba(150,150,150,0.5);
