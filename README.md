@@ -49,9 +49,14 @@ New users create an account and build a database (closet) of pant, shirts, dress
 
 ## WIREFRAMES
 
-![Login Page](https://github.com/DaveShaffer/WDI6-outFttr/blob/master/images/LoginPage.png)
+![Signup Page](https://github.com/DaveShaffer/WDI6-outFttr/blob/master/images/SignupPage.png)
+
+![Home Page](https://github.com/DaveShaffer/WDI6-outFttr/blob/master/images/HomePage.png)
 
 ![Create an Outfit](https://github.com/DaveShaffer/WDI6-outFttr/blob/master/images/CreateOutfit.png)
+
+![View Outfits](https://github.com/DaveShaffer/WDI6-outFttr/blob/master/images/MyOutfits.png)
+
 
 ## MAJOR HURDLES
  - routing
@@ -61,5 +66,7 @@ New users create an account and build a database (closet) of pant, shirts, dress
  - displaying User info because of Passport
  - styling with Bootstrap
  - OpenWeatherMap API working on Heroku
+ - Responsiveness
 
 ## FUTURE VISION
+ - Make the app more mobile-friendly and responsive
