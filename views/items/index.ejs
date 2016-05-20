@@ -101,30 +101,26 @@
     <div class="container">
       <div class="header-content-inner">
       <div class="weather">
-        <h3 style="color:white;">Your Weather</h3>
+        <h3 style="color:white;">My Weather</h3>
         <div class="wx" id="currentTemp"></div>
         <div class="wx" id="forecast1"></div>
         <div class="wx" id="minTemp"></div>
         <div class="wx" id="avgWind"></div>
       </div>
         <div class="main">
-<<<<<<< HEAD
-            <h1 style="color:#f05f40; text-align:center">My Closet</h1>
+            <h1 class="item-header">My Closet</h1>
             <hr>
-=======
-        <h1 class="item-header">My Closet</h1>
-        <hr>
->>>>>>> b7e994a1178c225817720b8211d085be11e4e151
         </div>
+
         <ul>
           <div class="item-row" >
             <% items.forEach(function(item) { %>
             <form method="POST" action="/items/<%= item._id %>?_method=DELETE">
               <div class="col-sm-6 col-md-3 set-height itembg">
-              <a href="/items/<%= item._id %>"><%= item.name %></a></p>
-              <img src="<%= item.avatar_url %>" width="225px">
-              <button type="submit" class="btn btn-xs btn-danger">Delete</button>
-               </div>
+                <a href="/items/<%= item._id %>"><%= item.name %></a></p>
+                <img src="<%= item.avatar_url %>" width="225px">
+                <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+              </div>
             </form>
             <% }) %>
           </div>
