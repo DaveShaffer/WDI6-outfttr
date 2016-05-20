@@ -34,7 +34,7 @@
 </head>
 
 <body style="background-image:url(http://images.containerstore.com/medialibrary/images/tcsclosets/slideshow/Image01-TCSClosets-960.jpg); background-size:cover;" id="page-top">
-<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -50,13 +50,13 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a class="page-scroll" href="/items">My Closet</a></li>
-                    <li><a class="page-scroll" href="/outfits">My Outfits</a></li>
+                    <li><a class="page-scroll" href="/items">MY CLOSET</a></li>
+                    <li><a class="page-scroll" href="/outfits">MY OUTFITS</a></li>
                     <% if (currentUser) { %>
                       <li><a class= "page-scroll" href="/users/<%= currentUser.id %>"><%= currentUser.local.email %></a></li>
-                      <li><a href="/logout">Log Out</a></li>
+                      <li><a href="/logout">LOG OUT</a></li>
                     <% } else { %>
-                        <li><a class="page-scroll" href="/login">Log In</a></li>
+                        <li><a class="page-scroll" href="/login">LOG IN</a></li>
                     <% } %>
                 </ul>
             </div>
@@ -64,7 +64,8 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-    <div>
+
+    <div class="itembg">
       <h3><b>Name: </b><%= outfit.name %></h3>
       <p>Current items</p>
       <ul>
@@ -76,14 +77,24 @@
       <p>Add items to oufit</p>
       <% itemsToAdd.forEach(function(item) { %>
           <form action="/outfits/<%= outfit._id %>?_method=PUT" method="post">
+<<<<<<< HEAD
           <img src="<%= item.avatar_url %>" width="225px">
           <button class="btn btn-default" id='send' type="submit">Add to outfit</button>
           <input type="hidden" name="itemid" value ="<%= item._id %>">
         </form>
         <% }) %>
+=======
+            <img src="<%= item.avatar_url %>" width="225px">
+            <span><%= item.name %></span>
+            <button class="btn btn-default" id='send' type="submit">Add to outfit</button>
+            <input type="hidden" name="itemid" value ="<%= item._id %>">
+          </form>
+      <% }) %>
+        <a href="/outfits" class="btn btn-default">Back</a>
+>>>>>>> 659c98e6b1b9f69be115c41fdc6a698215471b5e
     </div>
 
-    <a href="/outfits" class="btn btn-default">Back</a>
+
 
   <footer>
     <% include ../partials/footer %>

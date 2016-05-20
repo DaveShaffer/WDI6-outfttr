@@ -52,13 +52,13 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul list-style-type="none" class="nav navbar-nav navbar-right">
-                    <li><a href="/items">My Closet</a></li>
-                    <li><a href="/outfits">My Outfits</a></li>
+                    <li><a href="/items">MY CLOSET</a></li>
+                    <li><a href="/outfits">MY OUTFITS</a></li>
                     <% if (currentUser) { %>
                       <li><a href="/users/<%= currentUser.id %>"><%= currentUser.local.email %></a></li>
-                      <li><a href="/logout">Log Out</a></li>
+                      <li><a href="/logout">LOG OUT</a></li>
                     <% } else { %>
-                      <li><a href="/login">Log In</a></li>
+                      <li><a href="/login">LOG IN</a></li>
                     <% } %>
                 </ul>
             </div>
@@ -69,7 +69,7 @@
 
     <div class="formbg">
       <div class="header-content-inner">
-        <h1 style="color:#f05f40; text-align:center">Add Clothing Item:</h1><hr>
+        <h1 style="color:#f05f40; text-align:center; font-weight:bold">Add Clothing Item</h1><hr>
         <ul">
           <form method="post" action="/items">
             <div class="form-group">
