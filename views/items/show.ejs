@@ -53,13 +53,13 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a class="page-scroll" href="/items">My Closet</a></li>
-                    <li><a class="page-scroll" href="/outfits">My Outfits</a></li>
+                    <li><a class="page-scroll" href="/items">MY CLOSET</a></li>
+                    <li><a class="page-scroll" href="/outfits">MY OUTFITS/a></li>
                     <% if (currentUser) { %>
                       <li><a class= "page-scroll" href="/users/<%= currentUser.id %>"><%= currentUser.local.email %></a></li>
-                      <li><a href="/logout">Log Out</a></li>
+                      <li><a href="/logout">LOG OUT</a></li>
                     <% } else { %>
-                        <li><a class="page-scroll" href="/login">Log Out</a></li>
+                        <li><a class="page-scroll" href="/login">LOG IN</a></li>
                     <% } %>
                 </ul>
             </div>
@@ -68,9 +68,9 @@
         <!-- /.container-fluid -->
     </nav>
 
-    <div class="container">
+    <div class="formbg">
     <div class="header-content-inner">
-      <h1 style="color: white;" align="center">Your Clothing</h1><hr>
+      <h1 style="color: #f05f40; font-weight:bold" align="center">My Clothing Item</h1><hr>
 
     <div class="itembg show">
       <h3 style="color:#f05f40; text-align:center"><%= item.name %></h3>
