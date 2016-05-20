@@ -9,6 +9,8 @@ body {
   color: #f05f40;
 }
 
+
+
 a {
   color: #f05f40;
 }
@@ -19,7 +21,6 @@ div.wx {
 
 div.item-row {
   max-height: 400px;
-  max-width: 400px;
 }
 
 .itembg {
