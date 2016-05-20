@@ -61,12 +61,12 @@ New users create an account and build a database (closet) of pant, shirts, dress
 
 
 ## MAJOR HURDLES
- - routing
+ - Routing our Outfits
  - Heroku hosting
  - AWS hosting
- - displaying the Items
- - displaying User info because of Passport
- - styling with Bootstrap
+ - Displaying the Items
+ - Displaying User info because of Passport
+ - Styling with Bootstrap
  - OpenWeatherMap API working on Heroku
  - Responsiveness
 
