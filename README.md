@@ -33,6 +33,8 @@ Trello board: [https://trello.com/b/OJTvLgzb/project-3](https://trello.com/b/OJT
  - Slack messaging app
  - OpenWeatherMap weather API
  - IP-API Geolocation API
+ - Mellow Mushroom pizza
+ - Sweetwater 420 beer
 
 ## GENERAL APPROACH
 When we first met, we presented project proposals and voted on the best.  Next, we brainstormed some models for our project on the white board then pitched our idea to our instructors.  After receiving their feedback, we sketched out our plans on Trello.  Over the weekend we started individual tasks: a new git repo was created with a basic express framework and models, the logo sketch was submitted to an artist, image hosting was setup on S3 and we began security coding with Passport.  On Monday we began creating routes and views and started bootstrap integration, sketched wireframes, added bootstrap, researched the OpenWeatherMap API and finished passport security.
