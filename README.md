@@ -2,8 +2,7 @@
 # outfttr
 ### PROJECT 3
 #### General Assembly
-##### Web Development Immersive
-##### Cohort 6
+##### Web Development Immersive, Cohort 6
 ##### Developers: Brad Hughes, Dave Shaffer, Gatina Foy and Sydney Smith
 #
 ###### Atlanta, GA, USA
@@ -12,7 +11,8 @@
 
 For project three, we formed teams to draft, design and create a full-stack server-side JavaScript API (Application Program Interface) using Node.js, MongoDB and Express.js.  We practiced Git flow (project version control) on GitHub and communicated on Trello and Slack to manage team collaboration.
 
-Deployed App: <https://outfttr.herokuapp.com/>
+Deployed app: [https://outfttr.herokuapp.com/](https://outfttr.herokuapp.com/)<br>
+Trello board: [https://trello.com/b/OJTvLgzb/project-3](https://trello.com/b/OJTvLgzb/project-3)
 
 ## TECHNOLOGIES AND TOOLS
  - MongoDB relational NoSQL database
