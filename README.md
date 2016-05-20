@@ -1,4 +1,4 @@
-![Logo](https://github.com/DaveShaffer/WDI6-outFttr/blob/master/images/outFttr.png)
+![Logo](https://github.com/DaveShaffer/WDI6-outFttr/blob/master/images/outfttr-project.png)
 # outfttr
 ### PROJECT 3
 #### General Assembly
