@@ -1,4 +1,4 @@
-![Logo](https://github.com/DaveShaffer/WDI6-outFttr/blob/master/images/Logo.jpeg)
+![Logo](https://github.com/DaveShaffer/WDI6-outFttr/blob/master/images/outFttr.png)
 # outfttr
 ### PROJECT 3
 #### General Assembly
@@ -45,7 +45,7 @@ New users create an account and build a database (closet) of pant, shirts, dress
 
 ## SITE MAP
 
-![Site Map](https://github.com/DaveShaffer/WDI6-outFttr/blob/master/images/outFttr.png)
+![Site Map](https://github.com/DaveShaffer/WDI6-outFttr/blob/master/images/SiteMap.png)
 
 ## WIREFRAMES
 
