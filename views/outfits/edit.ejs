@@ -77,7 +77,6 @@
       <% itemsToAdd.forEach(function(item) { %>
           <form action="/outfits/<%= outfit._id %>?_method=PUT" method="post">
           <img src="<%= item.avatar_url %>" width="225px">
-          <span><%= item.name %></span>
           <button class="btn btn-default" id='send' type="submit">Add to outfit</button>
           <input type="hidden" name="itemid" value ="<%= item._id %>">
         </form>
