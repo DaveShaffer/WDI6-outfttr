@@ -72,3 +72,4 @@ New users create an account and build a database (closet) of pant, shirts, dress
 
 ## FUTURE VISION
  - Make the app more mobile-friendly and responsive
+ - Fixed "last worn" feature to only register an item was worn when clean is unclicked
