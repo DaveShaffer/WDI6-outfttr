@@ -3,7 +3,7 @@
 ### PROJECT 3
 #### General Assembly
 ##### Web Development Immersive, Cohort 6
-##### Developers: Brad Hughes, Dave Shaffer, Gatina Foy and Sydney Smith
+##### Developers: [Brad Hughes](https://www.linkedin.com/in/bradthughes), [Dave Shaffer](https://www.linkedin.com/in/daveashaffer), [Gatina Foy](https://www.linkedin.com/in/gatinafoy) and [Sydney Smith](https://www.linkedin.com/in/iamsydneysmith)
 #
 ###### Atlanta, GA, USA
 #
